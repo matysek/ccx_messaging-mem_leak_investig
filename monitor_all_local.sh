@@ -3,7 +3,7 @@
 # Comprehensive monitoring for all local CCX containers
 # Captures docker stats, /proc/meminfo, and Python GC stats every minute
 
-CCX_CONTAINERS=("rules-uploader" "archive-sync" "archive-sync-ols" "multiplexor" "rules-processing")
+CCX_CONTAINERS=("rules-uploader" "archive-sync" "rules-processing")
 OUTPUT_DIR="local_monitoring_$(date +%Y%m%d_%H%M%S)"
 
 mkdir -p "$OUTPUT_DIR"

@@ -3,8 +3,8 @@
 # Enhanced internal metrics collection for ALL leaking containers
 # Safe O(1) operations only - no gc.collect(), no iteration over large collections
 
-# Containers with memory leaks (excluding archive-sync-ols which has no leak)
-CONTAINERS=("rules-uploader" "archive-sync" "multiplexor" "rules-processing")
+# Containers with memory leaks
+CONTAINERS=("rules-uploader" "archive-sync" "rules-processing")
 OUTPUT_DIR="${1:-local_monitoring_internal_$(date +%Y%m%d_%H%M%S)}"
 
 mkdir -p "$OUTPUT_DIR"

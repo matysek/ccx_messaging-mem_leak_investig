@@ -3,7 +3,7 @@
 # Monitor BROKER INTERNALS - what's accumulating inside the single long-lived broker
 # This tracks the actual leak source
 
-CONTAINERS=("rules-uploader" "archive-sync" "multiplexor" "rules-processing")
+CONTAINERS=("rules-uploader" "archive-sync" "rules-processing")
 OUTPUT_DIR="${1:-local_monitoring_internal_$(date +%Y%m%d_%H%M%S)}"
 
 mkdir -p "$OUTPUT_DIR"

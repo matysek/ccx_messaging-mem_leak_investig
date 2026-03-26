@@ -47,13 +47,20 @@ Run locally in Podman to:
    docker compose up -d        
    ```     
  
-3. **Setup archive sending script:**                  
-   ```bash 
-   # Inside the mem leak repo                   
-   python3 -m venv venv        
-   source venv/bin/activate    
-   export PIP_INDEX_URL=https://repository.engineering.redhat.com/nexus/repository/insights-qe/simple             
-   pip install -r requirements.txt
+3. **Setup archive sending script:**
+   ```bash
+   # Inside the mem leak repo
+   python3 -m venv venv
+   source venv/bin/activate
+
+   # Install molodec from GitLab (requires dual pip indexes:
+   # PyPI for build tools like hatchling, RH internal for iqe-jwt)
+   PIP_INDEX_URL=https://pypi.org/simple \
+   PIP_EXTRA_INDEX_URL=https://repository.engineering.redhat.com/nexus/repository/insights-qe/simple \
+   pip install git+https://gitlab.cee.redhat.com/ccx/molodec.git@master
+
+   # Install remaining dependencies
+   pip install click requests
    ```     
 ---        
  
@@ -67,7 +74,7 @@ Start monitoring:
 ./monitor_all_local.sh         
 ```        
 
-This monitors all 5 ccx-messaging based containers every 5 seconds, capturing:            
+This monitors all 3 ccx-messaging based containers every 5 seconds, capturing:            
 - Docker stats (CPU, memory, network I/O)             
 - Python GC statistics         
 - /proc/meminfo snapshots      
@@ -81,11 +88,9 @@ python send_archives.py upload
  
 ## Containers Monitored        
  
-1. **rules-uploader**   
-2. **archive-sync**            
-3. **archive-sync-ols** 
-4. **multiplexor** 
-5. **rules-processing**          
+1. **rules-uploader**
+2. **archive-sync**
+3. **rules-processing**          
              
 ## Files in This Repository    
  
