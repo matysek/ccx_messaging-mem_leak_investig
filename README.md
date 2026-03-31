@@ -94,10 +94,8 @@ Apply with `git apply -p0 <file>.patch` from the respective repo root.
 | `monitored_still_leaky/` | Earlier | Various | Extra monitoring (more logging), still leaky |
 | `dr_py_still_leaky/` | Earlier | Various | dr.py-only partial fix, still leaky |
 | `unsure/` | Earlier | Various | Inconclusive runs |
-| `local_monitoring_20260325_073850/` | 2026-03-25 | 4 hours | Discovered docker exec GC bug, PermissionError storm |
-| `local_monitoring_20260326_073712/` | 2026-03-26 | 9.2 hours | Confirmed leak is time-based (~1 MB/hr), zero errors |
-| `local_monitoring_20260330_165910/` | 2026-03-30 | Failed | First podman attempt, headers only |
-| `local_monitoring_20260330_171224/` | 2026-03-30 | **12 hours** | **Post-fix verification**: leak eliminated, memory stable/decreasing |
+| `local_monitoring_20260326_073712/` | 2026-03-26 | 9.2 hours | Confirmed leak is time-based (~1 MB/hr), zero errors. Container logs removed to save space. Docker stats CSV has full 9.2hr data (2797 rows). Process memory and Prometheus CSVs only cover first ~21 min (known script bug at the time). |
+| `local_monitoring_20260330_171224/` | 2026-03-30 | **12 hours** | **Post-fix verification**: leak eliminated, memory stable/decreasing. Container logs removed to save space. All CSVs have full 12hr data (3571 rows): podman stats, process memory, Prometheus metrics including broker dict sizes. |
 
 ## Containers Monitored
 
