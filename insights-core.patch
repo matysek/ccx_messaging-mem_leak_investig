@@ -1,0 +1,12 @@
+diff --git insights/core/dr.py insights/core/dr.py
+index c953e5890..7124044af 100644
+--- insights/core/dr.py
++++ insights/core/dr.py
+@@ -1111,6 +1111,7 @@ def run_components(ordered_components, components, broker):
+             broker.add_exception(component, ex, tb)
+             for reg_spec in get_registry_points(component):
+                 broker.add_exception(reg_spec, ex, tb)
++            ex.__traceback__ = None
+         finally:
+             broker.exec_times[component] = time.time() - start
+             broker.fire_observers(component)
