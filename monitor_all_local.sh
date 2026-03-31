@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Comprehensive monitoring for all local CCX containers
-# Captures: docker stats, process memory (/proc/1/status), Prometheus metrics,
+# Captures: podman stats, process memory (/proc/1/status), Prometheus metrics,
 #           cgroup memory, and container logs
 #
 # Usage: ./monitor_all_local.sh [duration_minutes] [output_dir]
@@ -25,10 +25,10 @@ echo ""
 # Detect stats endpoint port per container
 declare -A STATS_PORT
 for container in "${CCX_CONTAINERS[@]}"; do
-    if ! docker ps --format '{{.Names}}' | grep -q "^${container}$"; then
+    if ! podman ps --format '{{.Names}}' | grep -q "^${container}$"; then
         continue
     fi
-    PORT=$(docker exec "$container" python3 -c "
+    PORT=$(podman exec "$container" python3 -c "
 import urllib.request
 for port in [8001, 8000, 9090, 8080]:
     try:
@@ -51,18 +51,18 @@ echo ""
 for container in "${CCX_CONTAINERS[@]}"; do
     # Docker stats CSV
     echo "timestamp,elapsed_min,cpu_perc,mem_usage_mb,mem_limit_mb,mem_perc,net_io,block_io" \
-        > "$OUTPUT_DIR/${container}_docker_stats.csv"
+        > "$OUTPUT_DIR/${container}_podman_stats.csv"
 
     # Process memory from /proc/1/status (actual app process inside container)
     echo "timestamp,elapsed_min,vm_size_kb,vm_rss_kb,vm_data_kb,vm_stk_kb,cgroup_mem_bytes" \
         > "$OUTPUT_DIR/${container}_process_memory.csv"
 
     # Prometheus metrics (from the app's own HTTP endpoint - real GC data)
-    echo "timestamp,elapsed_min,gc_collected_gen0,gc_collected_gen1,gc_collected_gen2,gc_uncollectable_gen0,gc_uncollectable_gen1,gc_uncollectable_gen2,gc_collections_gen0,gc_collections_gen1,gc_collections_gen2,process_rss_bytes,process_vm_bytes,process_cpu_seconds,open_fds,ccx_received,ccx_failures_ocp,ccx_processed_ocp,ccx_published_ocp" \
+    echo "timestamp,elapsed_min,gc_collected_gen0,gc_collected_gen1,gc_collected_gen2,gc_uncollectable_gen0,gc_uncollectable_gen1,gc_uncollectable_gen2,gc_collections_gen0,gc_collections_gen1,gc_collections_gen2,process_rss_bytes,process_vm_bytes,process_cpu_seconds,open_fds,ccx_received,ccx_failures_ocp,ccx_processed_ocp,ccx_published_ocp,broker_instances,broker_exceptions,broker_tracebacks" \
         > "$OUTPUT_DIR/${container}_prometheus.csv"
 
     # Capture initial container logs
-    docker logs "$container" > "$OUTPUT_DIR/${container}_logs_initial.txt" 2>&1
+    podman logs "$container" > "$OUTPUT_DIR/${container}_logs_initial.txt" 2>&1
 done
 
 START_TIME=$(date +%s)
@@ -86,7 +86,7 @@ while [ "$ELAPSED_MIN" -lt "$DURATION_MIN" ]; do
 
     for container in "${CCX_CONTAINERS[@]}"; do
         # Check if container is running
-        if ! docker ps --format '{{.Names}}' | grep -q "^${container}$"; then
+        if ! podman ps --format '{{.Names}}' | grep -q "^${container}$"; then
             if [ $((ITERATION % 60)) -eq 0 ]; then
                 echo "  [SKIP] $container - not running"
             fi
@@ -94,7 +94,7 @@ while [ "$ELAPSED_MIN" -lt "$DURATION_MIN" ]; do
         fi
 
         # 1. Docker stats (same as before - this works fine)
-        STATS=$(docker stats --no-stream --format "{{.CPUPerc}},{{.MemUsage}},{{.MemPerc}},{{.NetIO}},{{.BlockIO}}" "$container" 2>/dev/null)
+        STATS=$(podman stats --no-stream --format "{{.CPUPerc}},{{.MemUsage}},{{.MemPerc}},{{.NetIO}},{{.BlockIO}}" "$container" 2>/dev/null)
         if [ $? -eq 0 ]; then
             MEM_USAGE=$(echo "$STATS" | cut -d',' -f2 | awk '{print $1}' | sed 's/MiB//')
             MEM_LIMIT=$(echo "$STATS" | cut -d',' -f2 | awk '{print $3}' | sed 's/GiB//' | awk '{print $1 * 1024}')
@@ -103,11 +103,11 @@ while [ "$ELAPSED_MIN" -lt "$DURATION_MIN" ]; do
             NET_IO=$(echo "$STATS" | cut -d',' -f4)
             BLOCK_IO=$(echo "$STATS" | cut -d',' -f5)
             echo "${TIMESTAMP},${ELAPSED_MIN},${CPU_PERC},${MEM_USAGE},${MEM_LIMIT},${MEM_PERC},${NET_IO},${BLOCK_IO}" \
-                >> "$OUTPUT_DIR/${container}_docker_stats.csv"
+                >> "$OUTPUT_DIR/${container}_podman_stats.csv"
         fi
 
         # 2. Process memory from /proc/1/status (the ACTUAL app process, not a new one)
-        PROC_MEM=$(docker exec "$container" sh -c '
+        PROC_MEM=$(podman exec "$container" sh -c '
             grep -E "VmSize|VmRSS|VmData|VmStk" /proc/1/status 2>/dev/null | awk "{print \$2}" | tr "\n" ","
             cat /sys/fs/cgroup/memory.current 2>/dev/null || cat /sys/fs/cgroup/memory/memory.usage_in_bytes 2>/dev/null || echo 0
         ' 2>/dev/null)
@@ -118,7 +118,7 @@ while [ "$ELAPSED_MIN" -lt "$DURATION_MIN" ]; do
         # 3. Prometheus metrics from app's own HTTP endpoint (real GC + process data)
         PORT="${STATS_PORT[$container]}"
         if [ -n "$PORT" ]; then
-            PROM=$(docker exec "$container" python3 -c "
+            PROM=$(podman exec "$container" python3 -c "
 import urllib.request, re, sys
 
 try:
@@ -147,6 +147,9 @@ try:
         val('ccx_failures_total', 'archive=\"ocp\"'),
         val('ccx_engine_processed_total', 'archive=\"ocp\"'),
         val('ccx_published_total', 'archive=\"ocp\"'),
+        val('ccx_broker_instances_size'),
+        val('ccx_broker_exceptions_size'),
+        val('ccx_broker_tracebacks_size'),
     ]
     print(','.join(fields))
 except Exception as e:
@@ -163,7 +166,7 @@ except Exception as e:
         if [ $((CURRENT_TIME - LAST_LOG_TIME)) -ge "$LOG_INTERVAL" ]; then
             SINCE_TIME=$(date -d "@$LAST_LOG_TIME" '+%Y-%m-%dT%H:%M:%S' 2>/dev/null || date -r "$LAST_LOG_TIME" '+%Y-%m-%dT%H:%M:%S' 2>/dev/null)
             if [ -n "$SINCE_TIME" ]; then
-                docker logs --since "$SINCE_TIME" "$container" >> "$OUTPUT_DIR/${container}_logs_incremental.txt" 2>&1
+                podman logs --since "$SINCE_TIME" "$container" >> "$OUTPUT_DIR/${container}_logs_incremental.txt" 2>&1
             fi
         fi
 
@@ -187,8 +190,8 @@ echo "Monitoring completed at $(date)"
 echo "Capturing final logs..."
 
 for container in "${CCX_CONTAINERS[@]}"; do
-    if docker ps --format '{{.Names}}' | grep -q "^${container}$"; then
-        docker logs "$container" > "$OUTPUT_DIR/${container}_logs_final.txt" 2>&1
+    if podman ps --format '{{.Names}}' | grep -q "^${container}$"; then
+        podman logs "$container" > "$OUTPUT_DIR/${container}_logs_final.txt" 2>&1
         echo "  Saved final logs for $container"
     fi
 done
@@ -204,7 +207,7 @@ echo "Generating summary report..."
     echo ""
 
     for container in "${CCX_CONTAINERS[@]}"; do
-        CSV="$OUTPUT_DIR/${container}_docker_stats.csv"
+        CSV="$OUTPUT_DIR/${container}_podman_stats.csv"
         PROM_CSV="$OUTPUT_DIR/${container}_prometheus.csv"
         PROC_CSV="$OUTPUT_DIR/${container}_process_memory.csv"
         if [ ! -f "$CSV" ]; then continue; fi
@@ -259,6 +262,15 @@ echo "Generating summary report..."
             # CCX pipeline counters
             awk -F',' 'END {
                 if(NR>1) printf "Pipeline: received=%.0f, processed=%.0f, failures=%.0f, published=%.0f\n", $16, $18, $17, $19
+            }' "$PROM_CSV"
+
+            # Broker dict sizes (leak indicators)
+            awk -F',' 'NR==2 {
+                first_inst=$20; first_exc=$21; first_tb=$22
+            }
+            { last_inst=$20; last_exc=$21; last_tb=$22 }
+            END {
+                if(NR>1) printf "Broker dicts: instances=%s, exceptions=%s, tracebacks=%s (last sample)\n", last_inst, last_exc, last_tb
             }' "$PROM_CSV"
         fi
 

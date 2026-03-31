@@ -2,7 +2,7 @@
 
 # Monitor BROKER INTERNALS via the application's own process
 #
-# IMPORTANT: `docker exec python3 -c "from insights.core import dr; ..."` does NOT work
+# IMPORTANT: `podman exec python3 -c "from insights.core import dr; ..."` does NOT work (nor docker exec)
 # because it spawns a NEW Python interpreter that doesn't share memory with the app.
 # The dr._BROKER_INSTANCES WeakSet will be empty in a fresh process.
 #
@@ -24,10 +24,10 @@ mkdir -p "$OUTPUT_DIR"
 # Detect stats endpoint port per container
 declare -A STATS_PORT
 for CONTAINER in "${CONTAINERS[@]}"; do
-    if ! docker ps --format '{{.Names}}' 2>/dev/null | grep -q "^${CONTAINER}$"; then
+    if ! podman ps --format '{{.Names}}' 2>/dev/null | grep -q "^${CONTAINER}$"; then
         continue
     fi
-    PORT=$(docker exec "$CONTAINER" python3 -c "
+    PORT=$(podman exec "$CONTAINER" python3 -c "
 import urllib.request
 for port in [8001, 8000, 9090, 8080]:
     try:
@@ -66,14 +66,14 @@ while true; do
     TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
     for CONTAINER in "${CONTAINERS[@]}"; do
-        if ! docker ps --format '{{.Names}}' 2>/dev/null | grep -q "^${CONTAINER}$"; then
+        if ! podman ps --format '{{.Names}}' 2>/dev/null | grep -q "^${CONTAINER}$"; then
             echo "[${ELAPSED_MIN} min] ${CONTAINER}: NOT RUNNING"
             continue
         fi
 
         # 1. Kernel-level memory from /proc/1/status and /proc/1/smaps_rollup
         #    This is the REAL memory of the running application process
-        PROC_DATA=$(docker exec "$CONTAINER" sh -c '
+        PROC_DATA=$(podman exec "$CONTAINER" sh -c '
             vm_rss=$(grep "^VmRSS:" /proc/1/status 2>/dev/null | awk "{print \$2}")
             vm_data=$(grep "^VmData:" /proc/1/status 2>/dev/null | awk "{print \$2}")
             # smaps_rollup has detailed breakdown
@@ -89,7 +89,7 @@ while true; do
         PORT="${STATS_PORT[$CONTAINER]}"
         PROM_DATA="0,0,0,0,0"
         if [ -n "$PORT" ]; then
-            PROM_DATA=$(docker exec "$CONTAINER" python3 -c "
+            PROM_DATA=$(podman exec "$CONTAINER" python3 -c "
 import urllib.request, re, sys
 try:
     data = urllib.request.urlopen('http://localhost:${PORT}/metrics', timeout=5).read().decode()

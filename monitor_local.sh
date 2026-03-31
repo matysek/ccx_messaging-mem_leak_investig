@@ -11,7 +11,7 @@ echo "Output will be saved to: ${OUTPUT_FILE}"
 echo ""
 
 # Detect Prometheus port
-STATS_PORT=$(docker exec "$CONTAINER_NAME" python3 -c "
+STATS_PORT=$(podman exec "$CONTAINER_NAME" python3 -c "
 import urllib.request
 for port in [8001, 8000, 9090, 8080]:
     try:
@@ -29,7 +29,7 @@ else
 fi
 echo ""
 
-echo "timestamp,elapsed_min,memory_mib,vm_rss_kb,vm_data_kb,cgroup_bytes,gc_collected_total,gc_uncollectable_total,gc_collections_total,process_rss_bytes,open_fds" > "$OUTPUT_FILE"
+echo "timestamp,elapsed_min,memory_mib,vm_rss_kb,vm_data_kb,cgroup_bytes,gc_collected_total,gc_uncollectable_total,gc_collections_total,process_rss_bytes,open_fds,broker_instances,broker_exceptions,broker_tracebacks" > "$OUTPUT_FILE"
 
 START_TIME=$(date +%s)
 ITERATION=0
@@ -41,10 +41,10 @@ while true; do
     TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
     # Docker stats memory
-    MEMORY_MB=$(docker stats --no-stream --format "{{.MemUsage}}" "$CONTAINER_NAME" 2>/dev/null | awk '{print $1}' | sed 's/MiB//')
+    MEMORY_MB=$(podman stats --no-stream --format "{{.MemUsage}}" "$CONTAINER_NAME" 2>/dev/null | awk '{print $1}' | sed 's/MiB//')
 
     # Process memory from /proc/1/status (actual app process)
-    PROC_MEM=$(docker exec "$CONTAINER_NAME" sh -c '
+    PROC_MEM=$(podman exec "$CONTAINER_NAME" sh -c '
         vm_rss=$(grep "^VmRSS:" /proc/1/status 2>/dev/null | awk "{print \$2}")
         vm_data=$(grep "^VmData:" /proc/1/status 2>/dev/null | awk "{print \$2}")
         cgroup=$(cat /sys/fs/cgroup/memory.current 2>/dev/null || cat /sys/fs/cgroup/memory/memory.usage_in_bytes 2>/dev/null || echo 0)
@@ -52,9 +52,9 @@ while true; do
     ' 2>/dev/null)
 
     # Prometheus GC stats from running app
-    PROM="0,0,0,0,0"
+    PROM="0,0,0,0,0,0,0,0"
     if [ -n "$STATS_PORT" ]; then
-        PROM=$(docker exec "$CONTAINER_NAME" python3 -c "
+        PROM=$(podman exec "$CONTAINER_NAME" python3 -c "
 import urllib.request, re, sys
 try:
     data = urllib.request.urlopen('http://localhost:${STATS_PORT}/metrics', timeout=5).read().decode()
@@ -74,9 +74,12 @@ try:
                      float(val('python_gc_collections_total','generation=\"2\"'))
     rss = val('process_resident_memory_bytes')
     fds = val('process_open_fds')
-    print(f'{gc_collected:.0f},{gc_uncollectable:.0f},{gc_collections:.0f},{rss},{fds}')
+    broker_inst = val('ccx_broker_instances_size')
+    broker_exc = val('ccx_broker_exceptions_size')
+    broker_tb = val('ccx_broker_tracebacks_size')
+    print(f'{gc_collected:.0f},{gc_uncollectable:.0f},{gc_collections:.0f},{rss},{fds},{broker_inst},{broker_exc},{broker_tb}')
 except:
-    print('0,0,0,0,0')
+    print('0,0,0,0,0,0,0,0')
 " 2>/dev/null)
     fi
 

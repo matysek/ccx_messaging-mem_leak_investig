@@ -2,7 +2,7 @@
 
 # Collect internal metrics from all CCX containers
 #
-# NOTE: Previous versions used `docker exec python3 -c "import gc; ..."` which
+# NOTE: Previous versions used `podman exec python3 -c "import gc; ..."` which
 # spawns a NEW Python interpreter. The GC counts (42,8,0) were from the fresh
 # process, not the application. Similarly, dr._BROKER_INSTANCES was empty.
 #
@@ -23,10 +23,10 @@ mkdir -p "$OUTPUT_DIR"
 # Detect stats endpoint port per container
 declare -A STATS_PORT
 for CONTAINER in "${CONTAINERS[@]}"; do
-    if ! docker ps --format '{{.Names}}' 2>/dev/null | grep -q "^${CONTAINER}$"; then
+    if ! podman ps --format '{{.Names}}' 2>/dev/null | grep -q "^${CONTAINER}$"; then
         continue
     fi
-    PORT=$(docker exec "$CONTAINER" python3 -c "
+    PORT=$(podman exec "$CONTAINER" python3 -c "
 import urllib.request
 for port in [8001, 8000, 9090, 8080]:
     try:
@@ -44,7 +44,7 @@ done
 
 # Create CSV files
 for CONTAINER in "${CONTAINERS[@]}"; do
-    echo "timestamp,elapsed_min,vm_rss_kb,vm_data_kb,cgroup_mem_bytes,gc_collected_gen0,gc_collected_gen1,gc_collected_gen2,gc_uncollectable_gen0,gc_uncollectable_gen1,gc_uncollectable_gen2,gc_collections_gen0,gc_collections_gen1,gc_collections_gen2,process_rss_bytes,process_cpu_seconds,open_fds,ccx_received,ccx_processed_ocp,ccx_failures_ocp,ccx_published_ocp" \
+    echo "timestamp,elapsed_min,vm_rss_kb,vm_data_kb,cgroup_mem_bytes,gc_collected_gen0,gc_collected_gen1,gc_collected_gen2,gc_uncollectable_gen0,gc_uncollectable_gen1,gc_uncollectable_gen2,gc_collections_gen0,gc_collections_gen1,gc_collections_gen2,process_rss_bytes,process_cpu_seconds,open_fds,ccx_received,ccx_processed_ocp,ccx_failures_ocp,ccx_published_ocp,broker_instances,broker_exceptions,broker_tracebacks" \
         > "$OUTPUT_DIR/${CONTAINER}_internal_metrics.csv"
 done
 
@@ -64,13 +64,13 @@ while true; do
     TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
     for CONTAINER in "${CONTAINERS[@]}"; do
-        if ! docker ps --format '{{.Names}}' 2>/dev/null | grep -q "^${CONTAINER}$"; then
+        if ! podman ps --format '{{.Names}}' 2>/dev/null | grep -q "^${CONTAINER}$"; then
             echo "[${ELAPSED_MIN} min] ${CONTAINER}: NOT RUNNING - skipping"
             continue
         fi
 
         # Process memory from kernel
-        PROC_MEM=$(docker exec "$CONTAINER" sh -c '
+        PROC_MEM=$(podman exec "$CONTAINER" sh -c '
             vm_rss=$(grep "^VmRSS:" /proc/1/status 2>/dev/null | awk "{print \$2}")
             vm_data=$(grep "^VmData:" /proc/1/status 2>/dev/null | awk "{print \$2}")
             cgroup=$(cat /sys/fs/cgroup/memory.current 2>/dev/null || cat /sys/fs/cgroup/memory/memory.usage_in_bytes 2>/dev/null || echo 0)
@@ -79,9 +79,9 @@ while true; do
 
         # Prometheus metrics
         PORT="${STATS_PORT[$CONTAINER]}"
-        PROM="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+        PROM="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
         if [ -n "$PORT" ]; then
-            PROM=$(docker exec "$CONTAINER" python3 -c "
+            PROM=$(podman exec "$CONTAINER" python3 -c "
 import urllib.request, re, sys
 try:
     data = urllib.request.urlopen('http://localhost:${PORT}/metrics', timeout=5).read().decode()
@@ -107,11 +107,14 @@ try:
         val('ccx_engine_processed_total', 'archive=\"ocp\"'),
         val('ccx_failures_total', 'archive=\"ocp\"'),
         val('ccx_published_total', 'archive=\"ocp\"'),
+        val('ccx_broker_instances_size'),
+        val('ccx_broker_exceptions_size'),
+        val('ccx_broker_tracebacks_size'),
     ]
     print(','.join(fields))
 except Exception as e:
-    print(','.join(['0']*16), file=sys.stderr)
-    print(','.join(['0']*16))
+    print(','.join(['0']*19), file=sys.stderr)
+    print(','.join(['0']*19))
 " 2>/dev/null)
         fi
 
