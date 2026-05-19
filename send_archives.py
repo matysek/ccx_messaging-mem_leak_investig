@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import json
 import tarfile
 import click
@@ -99,9 +100,9 @@ def upload_ocp_recommendations(with_breaks=False):
 
     if with_breaks:
         # Burst mode with breaks
-        BURST_DURATION = 15 * 60  # 15 minutes
-        BREAK_DURATION = 5 * 60   # 5 minutes
-        NUM_CYCLES = 3
+        BURST_DURATION = 10 * 60  # 15 minutes
+        BREAK_DURATION = 1 * 60   # 5 minutes
+        NUM_CYCLES = 6
 
         print(f"\n{'='*60}")
         print(f"BURST MODE: 3 cycles of (15min send + 5min break)")

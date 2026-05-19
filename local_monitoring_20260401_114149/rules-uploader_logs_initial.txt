@@ -1,0 +1,662 @@
+Install colorama if console colors are preferred.
+2026-04-01 09:41:26 ccx_messaging.command_line INFO     Python interpreter version: 3.11.13
+2026-04-01 09:41:26 ccx_messaging.command_line INFO     /ccx-messaging-venv/bin/ccx-messaging version: 0.1.dev1+g34f476510
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.command_line
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.consumers
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.consumers.idp_kafka_consumer
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.consumers.kafka_consumer
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.consumers.rules_results_consumer
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.consumers.synced_archive_consumer
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.downloaders
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.downloaders.http_downloader
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.downloaders.s3_downloader
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.engines
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.engines.ocp_engine
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.engines.s3_upload_engine
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.engines.sha_extractor_engine
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.error
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.ingress
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.internal_pipeline
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.monitored_broker
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.publishers
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.publishers.dvo_metrics_publisher
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.publishers.idp_rule_processing_publisher
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.publishers.kafka_publisher
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.publishers.rule_processing_publisher
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.publishers.synced_archive_publisher
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.publishers.workloads_info_publisher
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.schemas
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.utils
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.utils.clowder
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.utils.kafka_config
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.utils.logging
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.utils.s3_uploader
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.utils.sentry
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.utils.sliced_template
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.watchers
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.watchers.cluster_id_watcher
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.watchers.consumer_watcher
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.watchers.payload_tracker_watcher
+2026-04-01 09:41:26 insights.core.dr DEBUG    Importing ccx_messaging.watchers.stats_watcher
+2026-04-01 09:41:26 botocore.hooks DEBUG    Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2026-04-01 09:41:26 botocore.hooks DEBUG    Changing event name from before-call.apigateway to before-call.api-gateway
+2026-04-01 09:41:26 botocore.hooks DEBUG    Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2026-04-01 09:41:26 botocore.hooks DEBUG    Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2026-04-01 09:41:26 botocore.hooks DEBUG    Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2026-04-01 09:41:26 botocore.hooks DEBUG    Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2026-04-01 09:41:26 botocore.hooks DEBUG    Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2026-04-01 09:41:26 botocore.hooks DEBUG    Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2026-04-01 09:41:26 botocore.hooks DEBUG    Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+2026-04-01 09:41:26 botocore.hooks DEBUG    Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2026-04-01 09:41:26 botocore.hooks DEBUG    Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2026-04-01 09:41:26 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/endpoints.json
+2026-04-01 09:41:26 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/sdk-default-configuration.json
+2026-04-01 09:41:26 botocore.hooks DEBUG    Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f0af663cfe0>
+2026-04-01 09:41:27 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/s3/2006-03-01/service-2.json.gz
+2026-04-01 09:41:27 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/s3/2006-03-01/service-2.sdk-extras.json
+2026-04-01 09:41:27 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/s3/2006-03-01/endpoint-rule-set-1.json.gz
+2026-04-01 09:41:27 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/partitions.json
+2026-04-01 09:41:27 botocore.hooks DEBUG    Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f0af67a60c0>
+2026-04-01 09:41:27 botocore.hooks DEBUG    Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f0af79f2840>
+2026-04-01 09:41:27 botocore.hooks DEBUG    Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f0af67a5e40>
+2026-04-01 09:41:27 botocore.endpoint DEBUG    Setting s3 timeout as (60, 60)
+2026-04-01 09:41:27 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/_retry.json
+2026-04-01 09:41:27 botocore.client DEBUG    Registering retry handlers for service: s3
+2026-04-01 09:41:27 botocore.utils DEBUG    Registering S3 region redirector handler
+2026-04-01 09:41:27 botocore.utils DEBUG    Registering S3Express Identity Resolver
+2026-04-01 09:41:27 ccx_messaging.consumers.kafka_consumer INFO     Consuming topic 'ccx.insights.rules.results' from brokers kafka:9092 as group 'rules_uploader_app'
+2026-04-01 09:41:27 ccx_messaging.consumers.kafka_consumer DEBUG    Confluent Kafka consumer extra configuration arguments: {'group.id': 'rules_uploader_app', 'bootstrap.servers': 'kafka:9092', 'max.poll.interval.ms': 600000, 'heartbeat.interval.ms': 10000, 'session.timeout.ms': 20000}
+2026-04-01 09:41:27 root INFO     No OCP rules package is installed.
+2026-04-01 09:41:27 ccx_messaging.watchers.stats_watcher INFO     StatWatcher created and listening on port 8000
+2026-04-01 09:41:27 ccx_messaging.watchers.payload_tracker_watcher INFO     Confluent Kafka consumer configuration arguments: Server: kafka:9092. Topic: platform.payload-status. Security protocol: None.
+2026-04-01 09:41:27 ccx_messaging.watchers.payload_tracker_watcher INFO     Sending status reports to Payload Tracker on topic platform.payload-status as service rules-uploader
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    Deserializing incoming message(topic: ccx.insights.rules.results, group.id: rules_uploader_app): b'{"path": "archives/compressed/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142.tar.gz", "metadata": {"cluster_id": "2c72b372-26fb-47e2-aef9-d943b406a026", "external_organization": "123456"}, "report": {"system": {"metadata": {}, "hostname": null}, "reports": [], "fingerprints": [], "analysis_metadata": {"start": "2026-04-01T09:41:43.317364+00:00", "finish": "2026-04-01T09:41:43.431359+00:00", "execution_context": "insights.core.context.HostArchiveContext", "plugin_sets": {"insights-core": {"version": "insights-core-3.7.5-1", "commit": "placeholder"}}}}, "request_id": "5d9e6d82b309/l06gQsgAQJ-000001"}'
+2026-04-01 09:41:43 ccx_messaging.internal_pipeline DEBUG    JSON schema validated: {'path': 'archives/compressed/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142.tar.gz', 'metadata': {'cluster_id': '2c72b372-26fb-47e2-aef9-d943b406a026', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.317364+00:00', 'finish': '2026-04-01T09:41:43.431359+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000001'}
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    JSON message deserialized (topic: ccx.insights.rules.results, group.id: rules_uploader_app): {'path': 'archives/compressed/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142.tar.gz', 'metadata': {'cluster_id': '2c72b372-26fb-47e2-aef9-d943b406a026', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.317364+00:00', 'finish': '2026-04-01T09:41:43.431359+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000001'}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_recv' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000001 received
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Downloading /tmp/tmpihbn91ig
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Saved /tmp/tmpihbn91ig to /tmp/tmpihbn91ig
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_download' callback
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Processing /tmp/tmpihbn91ig for uploading
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Broker content: dict_items([('cluster_id', '2c72b372-26fb-47e2-aef9-d943b406a026'), ('report_path', 'insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json')])
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    File /tmp/tmpihbn91ig is not a tarfile, skipping on_extract
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploading archive '/tmp/tmpihbn91ig' as ccx-bucket/insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploading 'insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json' as '/tmp/tmpihbn91ig' to 'ccx-bucket'
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7f0af663ff60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7f0af663f240>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7f0af666c9a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7f0af663f1a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7f0af666d580>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7f0af663efc0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x7f0af666dd00>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7f0af666d760>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.regions DEBUG    Calling endpoint provider with parameters: {'Bucket': 'ccx-bucket', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'Endpoint': 'http://minio:9000', 'ForcePathStyle': True, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2026-04-01 09:41:43 botocore.regions DEBUG    Endpoint provider result: http://minio:9000/ccx-bucket
+2026-04-01 09:41:43 botocore.regions DEBUG    Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2026-04-01 09:41:43 botocore.regions DEBUG    Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7f0af663f560>
+2026-04-01 09:41:43 botocore.handlers DEBUG    Adding expect 100 continue header to request.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x7f0af663de40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7f0af666cae0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Making request for OperationModel(name=PutObject) with params: {'url_path': '/insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json', 'query_string': {}, 'method': 'PUT', 'headers': {'x-amz-acl': 'bucket-owner-read', 'User-Agent': 'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': '100-continue', 'x-amz-checksum-crc32': 'MC2WcQ==', 'x-amz-sdk-checksum-algorithm': 'CRC32'}, 'body': <_io.BufferedReader name='/tmp/tmpihbn91ig'>, 'auth_path': '/ccx-bucket/insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json', 'url': 'http://minio:9000/ccx-bucket/insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f0af3dd09d0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'ccx-bucket', 'params': {'Bucket': 'ccx-bucket', 'Key': 'insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json', 'Body': <_io.BufferedReader name='/tmp/tmpihbn91ig'>, 'ACL': 'bucket-owner-read'}}, 'input_params': {'Bucket': 'ccx-bucket', 'Key': 'insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm_header': {'name': 'x-amz-sdk-checksum-algorithm', 'value': 'CRC32'}, 'request_algorithm': {'algorithm': 'crc32', 'in': 'header', 'name': 'x-amz-checksum-crc32'}}}}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f0af3dd0990>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7f0af663ed40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x7f0af666d6c0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x7f0af666dda0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.auth DEBUG    Calculating signature using v4 auth.
+2026-04-01 09:41:43 botocore.auth DEBUG    CanonicalRequest:
+PUT
+/ccx-bucket/insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json
+
+host:minio:9000
+x-amz-acl:bucket-owner-read
+x-amz-checksum-crc32:MC2WcQ==
+x-amz-content-sha256:b4420bc1a5f4d621395ab2e16f522f1090d55ea9d476f9fbb514ac42f3374750
+x-amz-date:20260401T094143Z
+x-amz-sdk-checksum-algorithm:CRC32
+
+host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm
+b4420bc1a5f4d621395ab2e16f522f1090d55ea9d476f9fbb514ac42f3374750
+2026-04-01 09:41:43 botocore.auth DEBUG    StringToSign:
+AWS4-HMAC-SHA256
+20260401T094143Z
+20260401/us-east-1/s3/aws4_request
+48e1e902b4c1b17e0b473c7255625d630e6f306befbad3b5b061e51d10e44cf9
+2026-04-01 09:41:43 botocore.auth DEBUG    Signature:
+89d9438953b1625526e90c71450bfe34ef2ab44c6920f9d671efb6c8c2f3506a
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x7f0af3de6a10>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x7f0af666d4e0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=http://minio:9000/ccx-bucket/insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json, headers={'x-amz-acl': b'bucket-owner-read', 'User-Agent': b'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/U,D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': b'100-continue', 'x-amz-checksum-crc32': b'MC2WcQ==', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'X-Amz-Date': b'20260401T094143Z', 'X-Amz-Content-SHA256': b'b4420bc1a5f4d621395ab2e16f522f1090d55ea9d476f9fbb514ac42f3374750', 'Authorization': b'AWS4-HMAC-SHA256 Credential=minio/20260401/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm, Signature=89d9438953b1625526e90c71450bfe34ef2ab44c6920f9d671efb6c8c2f3506a', 'amz-sdk-invocation-id': b'bf73052a-df0d-449d-8fec-68d51d7c83ff', 'amz-sdk-request': b'attempt=1', 'Content-Length': '615'}>
+2026-04-01 09:41:43 urllib3.connectionpool DEBUG    Starting new HTTP connection (1): minio:9000
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    Waiting for 100 Continue response.
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    100 Continue response seen, now sending request body.
+2026-04-01 09:41:43 urllib3.connectionpool DEBUG    http://minio:9000 "PUT /ccx-bucket/insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json HTTP/1.1" 200 0
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x7f0af666da80>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x7f0af666d8a0>
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response headers: {'Accept-Ranges': 'bytes', 'Content-Length': '0', 'ETag': '"46f915264c047013e08be0ec6eaedd00"', 'Server': 'MinIO', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Amz-Checksum-Crc32': 'MC2WcQ==', 'X-Amz-Checksum-Type': 'FULL_OBJECT', 'X-Amz-Id-2': 'dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8', 'X-Amz-Request-Id': '18A2324B9D22387E', 'X-Content-Type-Options': 'nosniff', 'X-Ratelimit-Limit': '5510', 'X-Ratelimit-Remaining': '5510', 'X-Xss-Protection': '1; mode=block', 'Date': 'Wed, 01 Apr 2026 09:41:43 GMT'}
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response body:
+b''
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x7f0af666dc60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f0af3df6b10>
+2026-04-01 09:41:43 botocore.retryhandler DEBUG    No retry needed.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploaded 'insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json' as '/tmp/tmpihbn91ig' to 'ccx-bucket'
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploaded archive '/tmp/tmpihbn91ig' as ccx-bucket/insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    msg_metadata {'cluster_id': '2c72b372-26fb-47e2-aef9-d943b406a026', 'external_organization': None}
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Generated report: {'path': 'insights/2c/2c72b372-26fb-47e2-aef9-d943b406a026/202604/01/094142/insights.json', 'original_path': '', 'metadata': {'cluster_id': '2c72b372-26fb-47e2-aef9-d943b406a026', 'external_organization': None}}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_process' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000001 processing
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_consumer_success' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000001 success
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    Deserializing incoming message(topic: ccx.insights.rules.results, group.id: rules_uploader_app): b'{"path": "archives/compressed/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143.tar.gz", "metadata": {"cluster_id": "bd9f8838-1e90-4b2a-81fd-9f1e34048aa7", "external_organization": "123456"}, "report": {"system": {"metadata": {}, "hostname": null}, "reports": [], "fingerprints": [], "analysis_metadata": {"start": "2026-04-01T09:41:43.477550+00:00", "finish": "2026-04-01T09:41:43.547887+00:00", "execution_context": "insights.core.context.HostArchiveContext", "plugin_sets": {"insights-core": {"version": "insights-core-3.7.5-1", "commit": "placeholder"}}}}, "request_id": "5d9e6d82b309/l06gQsgAQJ-000002"}'
+2026-04-01 09:41:43 ccx_messaging.internal_pipeline DEBUG    JSON schema validated: {'path': 'archives/compressed/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143.tar.gz', 'metadata': {'cluster_id': 'bd9f8838-1e90-4b2a-81fd-9f1e34048aa7', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.477550+00:00', 'finish': '2026-04-01T09:41:43.547887+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000002'}
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    JSON message deserialized (topic: ccx.insights.rules.results, group.id: rules_uploader_app): {'path': 'archives/compressed/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143.tar.gz', 'metadata': {'cluster_id': 'bd9f8838-1e90-4b2a-81fd-9f1e34048aa7', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.477550+00:00', 'finish': '2026-04-01T09:41:43.547887+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000002'}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_recv' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000002 received
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Downloading /tmp/tmpkfuiwtpm
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Saved /tmp/tmpkfuiwtpm to /tmp/tmpkfuiwtpm
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_download' callback
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Processing /tmp/tmpkfuiwtpm for uploading
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Broker content: dict_items([('cluster_id', 'bd9f8838-1e90-4b2a-81fd-9f1e34048aa7'), ('report_path', 'insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json')])
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    File /tmp/tmpkfuiwtpm is not a tarfile, skipping on_extract
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploading archive '/tmp/tmpkfuiwtpm' as ccx-bucket/insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploading 'insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json' as '/tmp/tmpkfuiwtpm' to 'ccx-bucket'
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7f0af663ff60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7f0af663f240>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7f0af666c9a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7f0af663f1a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7f0af666d580>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7f0af663efc0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x7f0af666dd00>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7f0af666d760>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.regions DEBUG    Calling endpoint provider with parameters: {'Bucket': 'ccx-bucket', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'Endpoint': 'http://minio:9000', 'ForcePathStyle': True, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2026-04-01 09:41:43 botocore.regions DEBUG    Endpoint provider result: http://minio:9000/ccx-bucket
+2026-04-01 09:41:43 botocore.regions DEBUG    Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2026-04-01 09:41:43 botocore.regions DEBUG    Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7f0af663f560>
+2026-04-01 09:41:43 botocore.handlers DEBUG    Adding expect 100 continue header to request.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x7f0af663de40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7f0af666cae0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Making request for OperationModel(name=PutObject) with params: {'url_path': '/insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json', 'query_string': {}, 'method': 'PUT', 'headers': {'x-amz-acl': 'bucket-owner-read', 'User-Agent': 'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': '100-continue', 'x-amz-checksum-crc32': 'fD7uZQ==', 'x-amz-sdk-checksum-algorithm': 'CRC32'}, 'body': <_io.BufferedReader name='/tmp/tmpkfuiwtpm'>, 'auth_path': '/ccx-bucket/insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json', 'url': 'http://minio:9000/ccx-bucket/insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f0af3dd09d0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'ccx-bucket', 'params': {'Bucket': 'ccx-bucket', 'Key': 'insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json', 'Body': <_io.BufferedReader name='/tmp/tmpkfuiwtpm'>, 'ACL': 'bucket-owner-read'}}, 'input_params': {'Bucket': 'ccx-bucket', 'Key': 'insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm_header': {'name': 'x-amz-sdk-checksum-algorithm', 'value': 'CRC32'}, 'request_algorithm': {'algorithm': 'crc32', 'in': 'header', 'name': 'x-amz-checksum-crc32'}}}}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f0af3dd0990>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7f0af663ed40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x7f0af666d6c0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x7f0af666dda0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.auth DEBUG    Calculating signature using v4 auth.
+2026-04-01 09:41:43 botocore.auth DEBUG    CanonicalRequest:
+PUT
+/ccx-bucket/insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json
+
+host:minio:9000
+x-amz-acl:bucket-owner-read
+x-amz-checksum-crc32:fD7uZQ==
+x-amz-content-sha256:fac16c076ea9002335471e61f0b29161b8a164704a803e97aaa263e7e14becaf
+x-amz-date:20260401T094143Z
+x-amz-sdk-checksum-algorithm:CRC32
+
+host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm
+fac16c076ea9002335471e61f0b29161b8a164704a803e97aaa263e7e14becaf
+2026-04-01 09:41:43 botocore.auth DEBUG    StringToSign:
+AWS4-HMAC-SHA256
+20260401T094143Z
+20260401/us-east-1/s3/aws4_request
+631c7bed7323bb608141191fc2c2bf2e16df45f6ea95a0c648a39299d7d89574
+2026-04-01 09:41:43 botocore.auth DEBUG    Signature:
+34a822bf51d555aff8f6f38c40f0e9382f471f9b96c1cbae6f0377023cf975b3
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x7f0af3de6a10>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x7f0af666d4e0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=http://minio:9000/ccx-bucket/insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json, headers={'x-amz-acl': b'bucket-owner-read', 'User-Agent': b'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/U,D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': b'100-continue', 'x-amz-checksum-crc32': b'fD7uZQ==', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'X-Amz-Date': b'20260401T094143Z', 'X-Amz-Content-SHA256': b'fac16c076ea9002335471e61f0b29161b8a164704a803e97aaa263e7e14becaf', 'Authorization': b'AWS4-HMAC-SHA256 Credential=minio/20260401/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm, Signature=34a822bf51d555aff8f6f38c40f0e9382f471f9b96c1cbae6f0377023cf975b3', 'amz-sdk-invocation-id': b'8d564b9d-d81b-4c8b-99e1-13aeefdffba6', 'amz-sdk-request': b'attempt=1', 'Content-Length': '615'}>
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    Waiting for 100 Continue response.
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    100 Continue response seen, now sending request body.
+2026-04-01 09:41:43 urllib3.connectionpool DEBUG    http://minio:9000 "PUT /ccx-bucket/insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json HTTP/1.1" 200 0
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x7f0af666da80>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x7f0af666d8a0>
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response headers: {'Accept-Ranges': 'bytes', 'Content-Length': '0', 'ETag': '"52fb0430c4ab00576b5757ae0d78d67d"', 'Server': 'MinIO', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Amz-Checksum-Crc32': 'fD7uZQ==', 'X-Amz-Checksum-Type': 'FULL_OBJECT', 'X-Amz-Id-2': 'dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8', 'X-Amz-Request-Id': '18A2324BA2A59F7C', 'X-Content-Type-Options': 'nosniff', 'X-Ratelimit-Limit': '5510', 'X-Ratelimit-Remaining': '5510', 'X-Xss-Protection': '1; mode=block', 'Date': 'Wed, 01 Apr 2026 09:41:43 GMT'}
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response body:
+b''
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x7f0af666dc60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f0af3df6b10>
+2026-04-01 09:41:43 botocore.retryhandler DEBUG    No retry needed.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploaded 'insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json' as '/tmp/tmpkfuiwtpm' to 'ccx-bucket'
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploaded archive '/tmp/tmpkfuiwtpm' as ccx-bucket/insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    msg_metadata {'cluster_id': 'bd9f8838-1e90-4b2a-81fd-9f1e34048aa7', 'external_organization': None}
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Generated report: {'path': 'insights/bd/bd9f8838-1e90-4b2a-81fd-9f1e34048aa7/202604/01/094143/insights.json', 'original_path': '', 'metadata': {'cluster_id': 'bd9f8838-1e90-4b2a-81fd-9f1e34048aa7', 'external_organization': None}}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_process' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000002 processing
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_consumer_success' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000002 success
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    Deserializing incoming message(topic: ccx.insights.rules.results, group.id: rules_uploader_app): b'{"path": "archives/compressed/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143.tar.gz", "metadata": {"cluster_id": "f5aba2c5-2b24-4611-ba3d-6908b36e95f4", "external_organization": "123456"}, "report": {"system": {"metadata": {}, "hostname": null}, "reports": [], "fingerprints": [], "analysis_metadata": {"start": "2026-04-01T09:41:43.575271+00:00", "finish": "2026-04-01T09:41:43.636216+00:00", "execution_context": "insights.core.context.HostArchiveContext", "plugin_sets": {"insights-core": {"version": "insights-core-3.7.5-1", "commit": "placeholder"}}}}, "request_id": "5d9e6d82b309/l06gQsgAQJ-000003"}'
+2026-04-01 09:41:43 ccx_messaging.internal_pipeline DEBUG    JSON schema validated: {'path': 'archives/compressed/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143.tar.gz', 'metadata': {'cluster_id': 'f5aba2c5-2b24-4611-ba3d-6908b36e95f4', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.575271+00:00', 'finish': '2026-04-01T09:41:43.636216+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000003'}
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    JSON message deserialized (topic: ccx.insights.rules.results, group.id: rules_uploader_app): {'path': 'archives/compressed/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143.tar.gz', 'metadata': {'cluster_id': 'f5aba2c5-2b24-4611-ba3d-6908b36e95f4', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.575271+00:00', 'finish': '2026-04-01T09:41:43.636216+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000003'}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_recv' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000003 received
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Downloading /tmp/tmpxwynwkn4
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Saved /tmp/tmpxwynwkn4 to /tmp/tmpxwynwkn4
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_download' callback
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Processing /tmp/tmpxwynwkn4 for uploading
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Broker content: dict_items([('cluster_id', 'f5aba2c5-2b24-4611-ba3d-6908b36e95f4'), ('report_path', 'insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json')])
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    File /tmp/tmpxwynwkn4 is not a tarfile, skipping on_extract
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploading archive '/tmp/tmpxwynwkn4' as ccx-bucket/insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploading 'insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json' as '/tmp/tmpxwynwkn4' to 'ccx-bucket'
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7f0af663ff60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7f0af663f240>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7f0af666c9a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7f0af663f1a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7f0af666d580>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7f0af663efc0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x7f0af666dd00>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7f0af666d760>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.regions DEBUG    Calling endpoint provider with parameters: {'Bucket': 'ccx-bucket', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'Endpoint': 'http://minio:9000', 'ForcePathStyle': True, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2026-04-01 09:41:43 botocore.regions DEBUG    Endpoint provider result: http://minio:9000/ccx-bucket
+2026-04-01 09:41:43 botocore.regions DEBUG    Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2026-04-01 09:41:43 botocore.regions DEBUG    Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7f0af663f560>
+2026-04-01 09:41:43 botocore.handlers DEBUG    Adding expect 100 continue header to request.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x7f0af663de40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7f0af666cae0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Making request for OperationModel(name=PutObject) with params: {'url_path': '/insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json', 'query_string': {}, 'method': 'PUT', 'headers': {'x-amz-acl': 'bucket-owner-read', 'User-Agent': 'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': '100-continue', 'x-amz-checksum-crc32': '2IeBxA==', 'x-amz-sdk-checksum-algorithm': 'CRC32'}, 'body': <_io.BufferedReader name='/tmp/tmpxwynwkn4'>, 'auth_path': '/ccx-bucket/insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json', 'url': 'http://minio:9000/ccx-bucket/insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f0af3dd09d0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'ccx-bucket', 'params': {'Bucket': 'ccx-bucket', 'Key': 'insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json', 'Body': <_io.BufferedReader name='/tmp/tmpxwynwkn4'>, 'ACL': 'bucket-owner-read'}}, 'input_params': {'Bucket': 'ccx-bucket', 'Key': 'insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm_header': {'name': 'x-amz-sdk-checksum-algorithm', 'value': 'CRC32'}, 'request_algorithm': {'algorithm': 'crc32', 'in': 'header', 'name': 'x-amz-checksum-crc32'}}}}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f0af3dd0990>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7f0af663ed40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x7f0af666d6c0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x7f0af666dda0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.auth DEBUG    Calculating signature using v4 auth.
+2026-04-01 09:41:43 botocore.auth DEBUG    CanonicalRequest:
+PUT
+/ccx-bucket/insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json
+
+host:minio:9000
+x-amz-acl:bucket-owner-read
+x-amz-checksum-crc32:2IeBxA==
+x-amz-content-sha256:2b2d1c9f270d1f960b410da0ad037f72a7a8039b238e9426be5ba0589f3ca691
+x-amz-date:20260401T094143Z
+x-amz-sdk-checksum-algorithm:CRC32
+
+host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm
+2b2d1c9f270d1f960b410da0ad037f72a7a8039b238e9426be5ba0589f3ca691
+2026-04-01 09:41:43 botocore.auth DEBUG    StringToSign:
+AWS4-HMAC-SHA256
+20260401T094143Z
+20260401/us-east-1/s3/aws4_request
+de9f387e266c0ad124a6da9052405bd98cd93633429d74940bad621784894fa9
+2026-04-01 09:41:43 botocore.auth DEBUG    Signature:
+9ea65707db1f46bc2a8f8c2b3e9de75dee1db8e00a68019762077f7ba48f3c88
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x7f0af3de6a10>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x7f0af666d4e0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=http://minio:9000/ccx-bucket/insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json, headers={'x-amz-acl': b'bucket-owner-read', 'User-Agent': b'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/U,D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': b'100-continue', 'x-amz-checksum-crc32': b'2IeBxA==', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'X-Amz-Date': b'20260401T094143Z', 'X-Amz-Content-SHA256': b'2b2d1c9f270d1f960b410da0ad037f72a7a8039b238e9426be5ba0589f3ca691', 'Authorization': b'AWS4-HMAC-SHA256 Credential=minio/20260401/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm, Signature=9ea65707db1f46bc2a8f8c2b3e9de75dee1db8e00a68019762077f7ba48f3c88', 'amz-sdk-invocation-id': b'4b2e87df-1c95-4487-b66a-23ae87f1ce29', 'amz-sdk-request': b'attempt=1', 'Content-Length': '615'}>
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    Waiting for 100 Continue response.
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    100 Continue response seen, now sending request body.
+2026-04-01 09:41:43 urllib3.connectionpool DEBUG    http://minio:9000 "PUT /ccx-bucket/insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json HTTP/1.1" 200 0
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x7f0af666da80>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x7f0af666d8a0>
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response headers: {'Accept-Ranges': 'bytes', 'Content-Length': '0', 'ETag': '"0d8d9b51e8c6629ca2a5a23f639696f8"', 'Server': 'MinIO', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Amz-Checksum-Crc32': '2IeBxA==', 'X-Amz-Checksum-Type': 'FULL_OBJECT', 'X-Amz-Id-2': 'dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8', 'X-Amz-Request-Id': '18A2324BA8522760', 'X-Content-Type-Options': 'nosniff', 'X-Ratelimit-Limit': '5510', 'X-Ratelimit-Remaining': '5510', 'X-Xss-Protection': '1; mode=block', 'Date': 'Wed, 01 Apr 2026 09:41:43 GMT'}
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response body:
+b''
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x7f0af666dc60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f0af3df6b10>
+2026-04-01 09:41:43 botocore.retryhandler DEBUG    No retry needed.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploaded 'insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json' as '/tmp/tmpxwynwkn4' to 'ccx-bucket'
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploaded archive '/tmp/tmpxwynwkn4' as ccx-bucket/insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    msg_metadata {'cluster_id': 'f5aba2c5-2b24-4611-ba3d-6908b36e95f4', 'external_organization': None}
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Generated report: {'path': 'insights/f5/f5aba2c5-2b24-4611-ba3d-6908b36e95f4/202604/01/094143/insights.json', 'original_path': '', 'metadata': {'cluster_id': 'f5aba2c5-2b24-4611-ba3d-6908b36e95f4', 'external_organization': None}}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_process' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000003 processing
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_consumer_success' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000003 success
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    Deserializing incoming message(topic: ccx.insights.rules.results, group.id: rules_uploader_app): b'{"path": "archives/compressed/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143.tar.gz", "metadata": {"cluster_id": "af75954a-2367-4172-8999-5df5400437cd", "external_organization": "123456"}, "report": {"system": {"metadata": {}, "hostname": null}, "reports": [], "fingerprints": [], "analysis_metadata": {"start": "2026-04-01T09:41:43.667655+00:00", "finish": "2026-04-01T09:41:43.699180+00:00", "execution_context": "insights.core.context.HostArchiveContext", "plugin_sets": {"insights-core": {"version": "insights-core-3.7.5-1", "commit": "placeholder"}}}}, "request_id": "5d9e6d82b309/l06gQsgAQJ-000004"}'
+2026-04-01 09:41:43 ccx_messaging.internal_pipeline DEBUG    JSON schema validated: {'path': 'archives/compressed/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143.tar.gz', 'metadata': {'cluster_id': 'af75954a-2367-4172-8999-5df5400437cd', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.667655+00:00', 'finish': '2026-04-01T09:41:43.699180+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000004'}
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    JSON message deserialized (topic: ccx.insights.rules.results, group.id: rules_uploader_app): {'path': 'archives/compressed/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143.tar.gz', 'metadata': {'cluster_id': 'af75954a-2367-4172-8999-5df5400437cd', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.667655+00:00', 'finish': '2026-04-01T09:41:43.699180+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000004'}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_recv' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000004 received
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Downloading /tmp/tmpw5p2yi9z
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Saved /tmp/tmpw5p2yi9z to /tmp/tmpw5p2yi9z
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_download' callback
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Processing /tmp/tmpw5p2yi9z for uploading
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Broker content: dict_items([('cluster_id', 'af75954a-2367-4172-8999-5df5400437cd'), ('report_path', 'insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json')])
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    File /tmp/tmpw5p2yi9z is not a tarfile, skipping on_extract
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploading archive '/tmp/tmpw5p2yi9z' as ccx-bucket/insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploading 'insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json' as '/tmp/tmpw5p2yi9z' to 'ccx-bucket'
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7f0af663ff60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7f0af663f240>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7f0af666c9a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7f0af663f1a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7f0af666d580>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7f0af663efc0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x7f0af666dd00>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7f0af666d760>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.regions DEBUG    Calling endpoint provider with parameters: {'Bucket': 'ccx-bucket', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'Endpoint': 'http://minio:9000', 'ForcePathStyle': True, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2026-04-01 09:41:43 botocore.regions DEBUG    Endpoint provider result: http://minio:9000/ccx-bucket
+2026-04-01 09:41:43 botocore.regions DEBUG    Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2026-04-01 09:41:43 botocore.regions DEBUG    Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7f0af663f560>
+2026-04-01 09:41:43 botocore.handlers DEBUG    Adding expect 100 continue header to request.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x7f0af663de40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7f0af666cae0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Making request for OperationModel(name=PutObject) with params: {'url_path': '/insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json', 'query_string': {}, 'method': 'PUT', 'headers': {'x-amz-acl': 'bucket-owner-read', 'User-Agent': 'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': '100-continue', 'x-amz-checksum-crc32': 'bmzcNQ==', 'x-amz-sdk-checksum-algorithm': 'CRC32'}, 'body': <_io.BufferedReader name='/tmp/tmpw5p2yi9z'>, 'auth_path': '/ccx-bucket/insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json', 'url': 'http://minio:9000/ccx-bucket/insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f0af3dd09d0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'ccx-bucket', 'params': {'Bucket': 'ccx-bucket', 'Key': 'insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json', 'Body': <_io.BufferedReader name='/tmp/tmpw5p2yi9z'>, 'ACL': 'bucket-owner-read'}}, 'input_params': {'Bucket': 'ccx-bucket', 'Key': 'insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm_header': {'name': 'x-amz-sdk-checksum-algorithm', 'value': 'CRC32'}, 'request_algorithm': {'algorithm': 'crc32', 'in': 'header', 'name': 'x-amz-checksum-crc32'}}}}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f0af3dd0990>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7f0af663ed40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x7f0af666d6c0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x7f0af666dda0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.auth DEBUG    Calculating signature using v4 auth.
+2026-04-01 09:41:43 botocore.auth DEBUG    CanonicalRequest:
+PUT
+/ccx-bucket/insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json
+
+host:minio:9000
+x-amz-acl:bucket-owner-read
+x-amz-checksum-crc32:bmzcNQ==
+x-amz-content-sha256:f75971698290b01e8def9fd3bb32c00367e489b083d6cc0b8e26238de64574ab
+x-amz-date:20260401T094143Z
+x-amz-sdk-checksum-algorithm:CRC32
+
+host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm
+f75971698290b01e8def9fd3bb32c00367e489b083d6cc0b8e26238de64574ab
+2026-04-01 09:41:43 botocore.auth DEBUG    StringToSign:
+AWS4-HMAC-SHA256
+20260401T094143Z
+20260401/us-east-1/s3/aws4_request
+2c9d4a18d5bbd1a2895b6adb1cd004e84ca34f2011ed50da11be4b8c824d771f
+2026-04-01 09:41:43 botocore.auth DEBUG    Signature:
+5efbf24e61e7ec3adb6f200971859d6c1f592038fbdc1824282188c94fea536d
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x7f0af3de6a10>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x7f0af666d4e0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=http://minio:9000/ccx-bucket/insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json, headers={'x-amz-acl': b'bucket-owner-read', 'User-Agent': b'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/U,D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': b'100-continue', 'x-amz-checksum-crc32': b'bmzcNQ==', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'X-Amz-Date': b'20260401T094143Z', 'X-Amz-Content-SHA256': b'f75971698290b01e8def9fd3bb32c00367e489b083d6cc0b8e26238de64574ab', 'Authorization': b'AWS4-HMAC-SHA256 Credential=minio/20260401/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm, Signature=5efbf24e61e7ec3adb6f200971859d6c1f592038fbdc1824282188c94fea536d', 'amz-sdk-invocation-id': b'1194ab54-7cc5-4ce4-87e7-00f93f00aa10', 'amz-sdk-request': b'attempt=1', 'Content-Length': '615'}>
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    Waiting for 100 Continue response.
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    100 Continue response seen, now sending request body.
+2026-04-01 09:41:43 urllib3.connectionpool DEBUG    http://minio:9000 "PUT /ccx-bucket/insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json HTTP/1.1" 200 0
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x7f0af666da80>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x7f0af666d8a0>
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response headers: {'Accept-Ranges': 'bytes', 'Content-Length': '0', 'ETag': '"69ea9d95a6f19aeaae70b112ab4ed354"', 'Server': 'MinIO', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Amz-Checksum-Crc32': 'bmzcNQ==', 'X-Amz-Checksum-Type': 'FULL_OBJECT', 'X-Amz-Id-2': 'dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8', 'X-Amz-Request-Id': '18A2324BABEB667C', 'X-Content-Type-Options': 'nosniff', 'X-Ratelimit-Limit': '5510', 'X-Ratelimit-Remaining': '5510', 'X-Xss-Protection': '1; mode=block', 'Date': 'Wed, 01 Apr 2026 09:41:43 GMT'}
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response body:
+b''
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x7f0af666dc60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f0af3df6b10>
+2026-04-01 09:41:43 botocore.retryhandler DEBUG    No retry needed.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploaded 'insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json' as '/tmp/tmpw5p2yi9z' to 'ccx-bucket'
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploaded archive '/tmp/tmpw5p2yi9z' as ccx-bucket/insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    msg_metadata {'cluster_id': 'af75954a-2367-4172-8999-5df5400437cd', 'external_organization': None}
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Generated report: {'path': 'insights/af/af75954a-2367-4172-8999-5df5400437cd/202604/01/094143/insights.json', 'original_path': '', 'metadata': {'cluster_id': 'af75954a-2367-4172-8999-5df5400437cd', 'external_organization': None}}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_process' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000004 processing
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_consumer_success' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000004 success
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    Deserializing incoming message(topic: ccx.insights.rules.results, group.id: rules_uploader_app): b'{"path": "archives/compressed/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143.tar.gz", "metadata": {"cluster_id": "cc57b076-7ec8-4cda-88df-c137febd8f50", "external_organization": "123456"}, "report": {"system": {"metadata": {}, "hostname": null}, "reports": [], "fingerprints": [], "analysis_metadata": {"start": "2026-04-01T09:41:43.742067+00:00", "finish": "2026-04-01T09:41:43.815028+00:00", "execution_context": "insights.core.context.HostArchiveContext", "plugin_sets": {"insights-core": {"version": "insights-core-3.7.5-1", "commit": "placeholder"}}}}, "request_id": "5d9e6d82b309/l06gQsgAQJ-000005"}'
+2026-04-01 09:41:43 ccx_messaging.internal_pipeline DEBUG    JSON schema validated: {'path': 'archives/compressed/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143.tar.gz', 'metadata': {'cluster_id': 'cc57b076-7ec8-4cda-88df-c137febd8f50', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.742067+00:00', 'finish': '2026-04-01T09:41:43.815028+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000005'}
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    JSON message deserialized (topic: ccx.insights.rules.results, group.id: rules_uploader_app): {'path': 'archives/compressed/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143.tar.gz', 'metadata': {'cluster_id': 'cc57b076-7ec8-4cda-88df-c137febd8f50', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.742067+00:00', 'finish': '2026-04-01T09:41:43.815028+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000005'}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_recv' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000005 received
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Downloading /tmp/tmp6yznp6wa
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Saved /tmp/tmp6yznp6wa to /tmp/tmp6yznp6wa
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_download' callback
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Processing /tmp/tmp6yznp6wa for uploading
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Broker content: dict_items([('cluster_id', 'cc57b076-7ec8-4cda-88df-c137febd8f50'), ('report_path', 'insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json')])
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    File /tmp/tmp6yznp6wa is not a tarfile, skipping on_extract
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploading archive '/tmp/tmp6yznp6wa' as ccx-bucket/insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploading 'insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json' as '/tmp/tmp6yznp6wa' to 'ccx-bucket'
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7f0af663ff60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7f0af663f240>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7f0af666c9a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7f0af663f1a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7f0af666d580>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7f0af663efc0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x7f0af666dd00>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7f0af666d760>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.regions DEBUG    Calling endpoint provider with parameters: {'Bucket': 'ccx-bucket', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'Endpoint': 'http://minio:9000', 'ForcePathStyle': True, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2026-04-01 09:41:43 botocore.regions DEBUG    Endpoint provider result: http://minio:9000/ccx-bucket
+2026-04-01 09:41:43 botocore.regions DEBUG    Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2026-04-01 09:41:43 botocore.regions DEBUG    Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7f0af663f560>
+2026-04-01 09:41:43 botocore.handlers DEBUG    Adding expect 100 continue header to request.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x7f0af663de40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7f0af666cae0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Making request for OperationModel(name=PutObject) with params: {'url_path': '/insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json', 'query_string': {}, 'method': 'PUT', 'headers': {'x-amz-acl': 'bucket-owner-read', 'User-Agent': 'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': '100-continue', 'x-amz-checksum-crc32': 'dHtIIw==', 'x-amz-sdk-checksum-algorithm': 'CRC32'}, 'body': <_io.BufferedReader name='/tmp/tmp6yznp6wa'>, 'auth_path': '/ccx-bucket/insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json', 'url': 'http://minio:9000/ccx-bucket/insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f0af3dd09d0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'ccx-bucket', 'params': {'Bucket': 'ccx-bucket', 'Key': 'insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json', 'Body': <_io.BufferedReader name='/tmp/tmp6yznp6wa'>, 'ACL': 'bucket-owner-read'}}, 'input_params': {'Bucket': 'ccx-bucket', 'Key': 'insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm_header': {'name': 'x-amz-sdk-checksum-algorithm', 'value': 'CRC32'}, 'request_algorithm': {'algorithm': 'crc32', 'in': 'header', 'name': 'x-amz-checksum-crc32'}}}}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f0af3dd0990>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7f0af663ed40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x7f0af666d6c0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x7f0af666dda0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.auth DEBUG    Calculating signature using v4 auth.
+2026-04-01 09:41:43 botocore.auth DEBUG    CanonicalRequest:
+PUT
+/ccx-bucket/insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json
+
+host:minio:9000
+x-amz-acl:bucket-owner-read
+x-amz-checksum-crc32:dHtIIw==
+x-amz-content-sha256:1768d11a9de3df1a7ecfd79faeeffb429eebb06d35d14e685f9e21d84529b754
+x-amz-date:20260401T094143Z
+x-amz-sdk-checksum-algorithm:CRC32
+
+host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm
+1768d11a9de3df1a7ecfd79faeeffb429eebb06d35d14e685f9e21d84529b754
+2026-04-01 09:41:43 botocore.auth DEBUG    StringToSign:
+AWS4-HMAC-SHA256
+20260401T094143Z
+20260401/us-east-1/s3/aws4_request
+de2149bc1c49d1858e868d0376bddaae8fb8a3518beeafc451e6c0af9bc05077
+2026-04-01 09:41:43 botocore.auth DEBUG    Signature:
+8473dcbf535f6c783b4bc8d8403e52634513fb139c92f4254e6a8977d19d2fcd
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x7f0af3de6a10>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x7f0af666d4e0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=http://minio:9000/ccx-bucket/insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json, headers={'x-amz-acl': b'bucket-owner-read', 'User-Agent': b'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/U,D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': b'100-continue', 'x-amz-checksum-crc32': b'dHtIIw==', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'X-Amz-Date': b'20260401T094143Z', 'X-Amz-Content-SHA256': b'1768d11a9de3df1a7ecfd79faeeffb429eebb06d35d14e685f9e21d84529b754', 'Authorization': b'AWS4-HMAC-SHA256 Credential=minio/20260401/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm, Signature=8473dcbf535f6c783b4bc8d8403e52634513fb139c92f4254e6a8977d19d2fcd', 'amz-sdk-invocation-id': b'73a4b864-0223-4682-a161-843bc5d36e90', 'amz-sdk-request': b'attempt=1', 'Content-Length': '615'}>
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    Waiting for 100 Continue response.
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    100 Continue response seen, now sending request body.
+2026-04-01 09:41:43 urllib3.connectionpool DEBUG    http://minio:9000 "PUT /ccx-bucket/insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json HTTP/1.1" 200 0
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x7f0af666da80>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x7f0af666d8a0>
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response headers: {'Accept-Ranges': 'bytes', 'Content-Length': '0', 'ETag': '"ed7abba596eee45667be64fee13df290"', 'Server': 'MinIO', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Amz-Checksum-Crc32': 'dHtIIw==', 'X-Amz-Checksum-Type': 'FULL_OBJECT', 'X-Amz-Id-2': 'dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8', 'X-Amz-Request-Id': '18A2324BB2DBEDBB', 'X-Content-Type-Options': 'nosniff', 'X-Ratelimit-Limit': '5510', 'X-Ratelimit-Remaining': '5510', 'X-Xss-Protection': '1; mode=block', 'Date': 'Wed, 01 Apr 2026 09:41:43 GMT'}
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response body:
+b''
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x7f0af666dc60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f0af3df6b10>
+2026-04-01 09:41:43 botocore.retryhandler DEBUG    No retry needed.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploaded 'insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json' as '/tmp/tmp6yznp6wa' to 'ccx-bucket'
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploaded archive '/tmp/tmp6yznp6wa' as ccx-bucket/insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    msg_metadata {'cluster_id': 'cc57b076-7ec8-4cda-88df-c137febd8f50', 'external_organization': None}
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Generated report: {'path': 'insights/cc/cc57b076-7ec8-4cda-88df-c137febd8f50/202604/01/094143/insights.json', 'original_path': '', 'metadata': {'cluster_id': 'cc57b076-7ec8-4cda-88df-c137febd8f50', 'external_organization': None}}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_process' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000005 processing
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_consumer_success' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000005 success
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    Deserializing incoming message(topic: ccx.insights.rules.results, group.id: rules_uploader_app): b'{"path": "archives/compressed/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143.tar.gz", "metadata": {"cluster_id": "49c1b512-aa0c-47b2-9e83-3b239f0243cf", "external_organization": "123456"}, "report": {"system": {"metadata": {}, "hostname": null}, "reports": [], "fingerprints": [], "analysis_metadata": {"start": "2026-04-01T09:41:43.850012+00:00", "finish": "2026-04-01T09:41:43.901844+00:00", "execution_context": "insights.core.context.HostArchiveContext", "plugin_sets": {"insights-core": {"version": "insights-core-3.7.5-1", "commit": "placeholder"}}}}, "request_id": "5d9e6d82b309/l06gQsgAQJ-000006"}'
+2026-04-01 09:41:43 ccx_messaging.internal_pipeline DEBUG    JSON schema validated: {'path': 'archives/compressed/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143.tar.gz', 'metadata': {'cluster_id': '49c1b512-aa0c-47b2-9e83-3b239f0243cf', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.850012+00:00', 'finish': '2026-04-01T09:41:43.901844+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000006'}
+2026-04-01 09:41:43 ccx_messaging.consumers.rules_results_consumer DEBUG    JSON message deserialized (topic: ccx.insights.rules.results, group.id: rules_uploader_app): {'path': 'archives/compressed/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143.tar.gz', 'metadata': {'cluster_id': '49c1b512-aa0c-47b2-9e83-3b239f0243cf', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.850012+00:00', 'finish': '2026-04-01T09:41:43.901844+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000006'}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_recv' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000006 received
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Downloading /tmp/tmp736pc2ur
+2026-04-01 09:41:43 insights_messaging.consumers DEBUG    Saved /tmp/tmp736pc2ur to /tmp/tmp736pc2ur
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_download' callback
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Processing /tmp/tmp736pc2ur for uploading
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Broker content: dict_items([('cluster_id', '49c1b512-aa0c-47b2-9e83-3b239f0243cf'), ('report_path', 'insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json')])
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    File /tmp/tmp736pc2ur is not a tarfile, skipping on_extract
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploading archive '/tmp/tmp736pc2ur' as ccx-bucket/insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploading 'insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json' as '/tmp/tmp736pc2ur' to 'ccx-bucket'
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7f0af663ff60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7f0af663f240>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7f0af666c9a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7f0af663f1a0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7f0af666d580>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7f0af663efc0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x7f0af666dd00>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7f0af666d760>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 botocore.regions DEBUG    Calling endpoint provider with parameters: {'Bucket': 'ccx-bucket', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'Endpoint': 'http://minio:9000', 'ForcePathStyle': True, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2026-04-01 09:41:43 botocore.regions DEBUG    Endpoint provider result: http://minio:9000/ccx-bucket
+2026-04-01 09:41:43 botocore.regions DEBUG    Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2026-04-01 09:41:43 botocore.regions DEBUG    Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7f0af663f560>
+2026-04-01 09:41:43 botocore.handlers DEBUG    Adding expect 100 continue header to request.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x7f0af663de40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7f0af666cae0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Making request for OperationModel(name=PutObject) with params: {'url_path': '/insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json', 'query_string': {}, 'method': 'PUT', 'headers': {'x-amz-acl': 'bucket-owner-read', 'User-Agent': 'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': '100-continue', 'x-amz-checksum-crc32': 'jt150A==', 'x-amz-sdk-checksum-algorithm': 'CRC32'}, 'body': <_io.BufferedReader name='/tmp/tmp736pc2ur'>, 'auth_path': '/ccx-bucket/insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json', 'url': 'http://minio:9000/ccx-bucket/insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f0af3dd09d0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'ccx-bucket', 'params': {'Bucket': 'ccx-bucket', 'Key': 'insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json', 'Body': <_io.BufferedReader name='/tmp/tmp736pc2ur'>, 'ACL': 'bucket-owner-read'}}, 'input_params': {'Bucket': 'ccx-bucket', 'Key': 'insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm_header': {'name': 'x-amz-sdk-checksum-algorithm', 'value': 'CRC32'}, 'request_algorithm': {'algorithm': 'crc32', 'in': 'header', 'name': 'x-amz-checksum-crc32'}}}}
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f0af3dd0990>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7f0af663ed40>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x7f0af666d6c0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x7f0af666dda0>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:43 botocore.auth DEBUG    Calculating signature using v4 auth.
+2026-04-01 09:41:43 botocore.auth DEBUG    CanonicalRequest:
+PUT
+/ccx-bucket/insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json
+
+host:minio:9000
+x-amz-acl:bucket-owner-read
+x-amz-checksum-crc32:jt150A==
+x-amz-content-sha256:dde2e8cee4ee80b377b1d571fd5cb2c91eb9d6ca11ea656900fa7b0d74c89e15
+x-amz-date:20260401T094143Z
+x-amz-sdk-checksum-algorithm:CRC32
+
+host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm
+dde2e8cee4ee80b377b1d571fd5cb2c91eb9d6ca11ea656900fa7b0d74c89e15
+2026-04-01 09:41:43 botocore.auth DEBUG    StringToSign:
+AWS4-HMAC-SHA256
+20260401T094143Z
+20260401/us-east-1/s3/aws4_request
+e832dadacc865cae48779ba236ebc8f47b342e3fd942068526fd7184d20bc53d
+2026-04-01 09:41:43 botocore.auth DEBUG    Signature:
+7a6a36130500c3a333d69dda1b9b85f1252b2d11ae12eb38ebafb14691636625
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x7f0af3de6a10>>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x7f0af666d4e0>
+2026-04-01 09:41:43 botocore.endpoint DEBUG    Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=http://minio:9000/ccx-bucket/insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json, headers={'x-amz-acl': b'bucket-owner-read', 'User-Agent': b'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/U,D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': b'100-continue', 'x-amz-checksum-crc32': b'jt150A==', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'X-Amz-Date': b'20260401T094143Z', 'X-Amz-Content-SHA256': b'dde2e8cee4ee80b377b1d571fd5cb2c91eb9d6ca11ea656900fa7b0d74c89e15', 'Authorization': b'AWS4-HMAC-SHA256 Credential=minio/20260401/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm, Signature=7a6a36130500c3a333d69dda1b9b85f1252b2d11ae12eb38ebafb14691636625', 'amz-sdk-invocation-id': b'a8c570eb-5e58-4ec7-991d-074eca9cf02f', 'amz-sdk-request': b'attempt=1', 'Content-Length': '615'}>
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    Waiting for 100 Continue response.
+2026-04-01 09:41:43 botocore.awsrequest DEBUG    100 Continue response seen, now sending request body.
+2026-04-01 09:41:43 urllib3.connectionpool DEBUG    http://minio:9000 "PUT /ccx-bucket/insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json HTTP/1.1" 200 0
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x7f0af666da80>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x7f0af666d8a0>
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response headers: {'Accept-Ranges': 'bytes', 'Content-Length': '0', 'ETag': '"5ad4359e5c9159f34ac55ed15b51fea3"', 'Server': 'MinIO', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Amz-Checksum-Crc32': 'jt150A==', 'X-Amz-Checksum-Type': 'FULL_OBJECT', 'X-Amz-Id-2': 'dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8', 'X-Amz-Request-Id': '18A2324BB7ECE530', 'X-Content-Type-Options': 'nosniff', 'X-Ratelimit-Limit': '5510', 'X-Ratelimit-Remaining': '5510', 'X-Xss-Protection': '1; mode=block', 'Date': 'Wed, 01 Apr 2026 09:41:43 GMT'}
+2026-04-01 09:41:43 botocore.parsers DEBUG    Response body:
+b''
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x7f0af666dc60>
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f0af3df6b10>
+2026-04-01 09:41:43 botocore.retryhandler DEBUG    No retry needed.
+2026-04-01 09:41:43 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:43 ccx_messaging.utils.s3_uploader DEBUG    Uploaded 'insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json' as '/tmp/tmp736pc2ur' to 'ccx-bucket'
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Uploaded archive '/tmp/tmp736pc2ur' as ccx-bucket/insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    msg_metadata {'cluster_id': '49c1b512-aa0c-47b2-9e83-3b239f0243cf', 'external_organization': None}
+2026-04-01 09:41:43 ccx_messaging.engines.s3_upload_engine DEBUG    Generated report: {'path': 'insights/49/49c1b512-aa0c-47b2-9e83-3b239f0243cf/202604/01/094143/insights.json', 'original_path': '', 'metadata': {'cluster_id': '49c1b512-aa0c-47b2-9e83-3b239f0243cf', 'external_organization': None}}
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_process' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000006 processing
+2026-04-01 09:41:43 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_consumer_success' callback
+2026-04-01 09:41:43 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000006 success
+2026-04-01 09:41:44 ccx_messaging.consumers.rules_results_consumer DEBUG    Deserializing incoming message(topic: ccx.insights.rules.results, group.id: rules_uploader_app): b'{"path": "archives/compressed/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143.tar.gz", "metadata": {"cluster_id": "65024f3d-d013-46cb-9a38-d5b0deeda783", "external_organization": "123456"}, "report": {"system": {"metadata": {}, "hostname": null}, "reports": [], "fingerprints": [], "analysis_metadata": {"start": "2026-04-01T09:41:43.933602+00:00", "finish": "2026-04-01T09:41:44.003287+00:00", "execution_context": "insights.core.context.HostArchiveContext", "plugin_sets": {"insights-core": {"version": "insights-core-3.7.5-1", "commit": "placeholder"}}}}, "request_id": "5d9e6d82b309/l06gQsgAQJ-000007"}'
+2026-04-01 09:41:44 ccx_messaging.internal_pipeline DEBUG    JSON schema validated: {'path': 'archives/compressed/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143.tar.gz', 'metadata': {'cluster_id': '65024f3d-d013-46cb-9a38-d5b0deeda783', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.933602+00:00', 'finish': '2026-04-01T09:41:44.003287+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000007'}
+2026-04-01 09:41:44 ccx_messaging.consumers.rules_results_consumer DEBUG    JSON message deserialized (topic: ccx.insights.rules.results, group.id: rules_uploader_app): {'path': 'archives/compressed/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143.tar.gz', 'metadata': {'cluster_id': '65024f3d-d013-46cb-9a38-d5b0deeda783', 'external_organization': '123456'}, 'report': {'system': {'metadata': {}, 'hostname': None}, 'reports': [], 'fingerprints': [], 'analysis_metadata': {'start': '2026-04-01T09:41:43.933602+00:00', 'finish': '2026-04-01T09:41:44.003287+00:00', 'execution_context': 'insights.core.context.HostArchiveContext', 'plugin_sets': {'insights-core': {'version': 'insights-core-3.7.5-1', 'commit': 'placeholder'}}}}, 'request_id': '5d9e6d82b309/l06gQsgAQJ-000007'}
+2026-04-01 09:41:44 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_recv' callback
+2026-04-01 09:41:44 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000007 received
+2026-04-01 09:41:44 insights_messaging.consumers DEBUG    Downloading /tmp/tmpv0iy3dtp
+2026-04-01 09:41:44 insights_messaging.consumers DEBUG    Saved /tmp/tmpv0iy3dtp to /tmp/tmpv0iy3dtp
+2026-04-01 09:41:44 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_download' callback
+2026-04-01 09:41:44 ccx_messaging.engines.s3_upload_engine DEBUG    Processing /tmp/tmpv0iy3dtp for uploading
+2026-04-01 09:41:44 ccx_messaging.engines.s3_upload_engine DEBUG    Broker content: dict_items([('cluster_id', '65024f3d-d013-46cb-9a38-d5b0deeda783'), ('report_path', 'insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json')])
+2026-04-01 09:41:44 ccx_messaging.engines.s3_upload_engine DEBUG    File /tmp/tmpv0iy3dtp is not a tarfile, skipping on_extract
+2026-04-01 09:41:44 ccx_messaging.engines.s3_upload_engine DEBUG    Uploading archive '/tmp/tmpv0iy3dtp' as ccx-bucket/insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json
+2026-04-01 09:41:44 ccx_messaging.utils.s3_uploader DEBUG    Uploading 'insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json' as '/tmp/tmpv0iy3dtp' to 'ccx-bucket'
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x7f0af663ff60>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x7f0af663f240>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x7f0af666c9a0>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x7f0af663f1a0>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function remove_bucket_from_url_paths_from_model at 0x7f0af666d580>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.annotate_request_context of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <bound method ClientCreator._inject_s3_input_parameters of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x7f0af663efc0>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-parameter-build.s3.PutObject: calling handler <function _handle_request_validation_mode_member at 0x7f0af666dd00>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <function customize_endpoint_resolver_builtins at 0x7f0af666d760>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-endpoint-resolution.s3: calling handler <bound method S3RegionRedirectorv2.redirect_from_cache of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:44 botocore.regions DEBUG    Calling endpoint provider with parameters: {'Bucket': 'ccx-bucket', 'Region': 'us-east-1', 'UseFIPS': False, 'UseDualStack': False, 'Endpoint': 'http://minio:9000', 'ForcePathStyle': True, 'Accelerate': False, 'UseGlobalEndpoint': True, 'Key': 'insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json', 'DisableMultiRegionAccessPoints': False, 'UseArnRegion': True}
+2026-04-01 09:41:44 botocore.regions DEBUG    Endpoint provider result: http://minio:9000/ccx-bucket
+2026-04-01 09:41:44 botocore.regions DEBUG    Selecting from endpoint provider's list of auth schemes: "sigv4". User selected auth scheme is: "None"
+2026-04-01 09:41:44 botocore.regions DEBUG    Selected auth type "v4" as "v4" with signing context params: {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x7f0af663f560>
+2026-04-01 09:41:44 botocore.handlers DEBUG    Adding expect 100 continue header to request.
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.apply_signing_cache_key of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function add_recursion_detection_header at 0x7f0af663de40>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x7f0af666cae0>
+2026-04-01 09:41:44 botocore.endpoint DEBUG    Making request for OperationModel(name=PutObject) with params: {'url_path': '/insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json', 'query_string': {}, 'method': 'PUT', 'headers': {'x-amz-acl': 'bucket-owner-read', 'User-Agent': 'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': '100-continue', 'x-amz-checksum-crc32': 'zdJrrg==', 'x-amz-sdk-checksum-algorithm': 'CRC32'}, 'body': <_io.BufferedReader name='/tmp/tmpv0iy3dtp'>, 'auth_path': '/ccx-bucket/insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json', 'url': 'http://minio:9000/ccx-bucket/insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x7f0af3dd09d0>, 'has_streaming_input': True, 'auth_type': 'v4', 'unsigned_payload': None, 'auth_options': ['aws.auth#sigv4'], 's3_redirect': {'redirected': False, 'bucket': 'ccx-bucket', 'params': {'Bucket': 'ccx-bucket', 'Key': 'insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json', 'Body': <_io.BufferedReader name='/tmp/tmpv0iy3dtp'>, 'ACL': 'bucket-owner-read'}}, 'input_params': {'Bucket': 'ccx-bucket', 'Key': 'insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json'}, 'signing': {'region': 'us-east-1', 'signing_name': 's3', 'disableDoubleEncoding': True}, 'endpoint_properties': {'authSchemes': [{'disableDoubleEncoding': True, 'name': 'sigv4', 'signingName': 's3', 'signingRegion': 'us-east-1'}]}, 'checksum': {'request_algorithm_header': {'name': 'x-amz-sdk-checksum-algorithm', 'value': 'CRC32'}, 'request_algorithm': {'algorithm': 'crc32', 'in': 'header', 'name': 'x-amz-checksum-crc32'}}}}
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x7f0af3dd0990>>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x7f0af40c77d0>>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x7f0af663ed40>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function remove_arn_from_signing_path at 0x7f0af666d6c0>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <function _set_extra_headers_for_unsigned_request at 0x7f0af666dda0>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-sign.s3.PutObject: calling handler <bound method S3ExpressIdentityResolver.resolve_s3express_identity of <botocore.utils.S3ExpressIdentityResolver object at 0x7f0af3df6cd0>>
+2026-04-01 09:41:44 botocore.auth DEBUG    Calculating signature using v4 auth.
+2026-04-01 09:41:44 botocore.auth DEBUG    CanonicalRequest:
+PUT
+/ccx-bucket/insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json
+
+host:minio:9000
+x-amz-acl:bucket-owner-read
+x-amz-checksum-crc32:zdJrrg==
+x-amz-content-sha256:4c8827fc8bf9da88198ff47734e73d208d57ab3a5b6f58b78568337cf36c6158
+x-amz-date:20260401T094144Z
+x-amz-sdk-checksum-algorithm:CRC32
+
+host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm
+4c8827fc8bf9da88198ff47734e73d208d57ab3a5b6f58b78568337cf36c6158
+2026-04-01 09:41:44 botocore.auth DEBUG    StringToSign:
+AWS4-HMAC-SHA256
+20260401T094144Z
+20260401/us-east-1/s3/aws4_request
+2b03c9ff85d9db51c06bcb13e06ea0672b122be35050d25dc1a0b1088500c9fb
+2026-04-01 09:41:44 botocore.auth DEBUG    Signature:
+68678dd14f8ccd1d99f1e61cd3c46d4736f9e19afeea2496f974be15222c3ca3
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <bound method UserAgentString.rebuild_and_replace_user_agent_handler of <botocore.useragent.UserAgentString object at 0x7f0af3de6a10>>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event request-created.s3.PutObject: calling handler <function add_retry_headers at 0x7f0af666d4e0>
+2026-04-01 09:41:44 botocore.endpoint DEBUG    Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=http://minio:9000/ccx-bucket/insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json, headers={'x-amz-acl': b'bucket-owner-read', 'User-Agent': b'Boto3/1.42.70 md/Botocore#1.42.70 ua/2.1 os/linux#6.18.10-200.fc43.x86_64 md/arch#x86_64 lang/python#3.11.13 md/pyimpl#CPython m/U,D,e,b,N,Z cfg/retry-mode#legacy Botocore/1.42.70', 'Expect': b'100-continue', 'x-amz-checksum-crc32': b'zdJrrg==', 'x-amz-sdk-checksum-algorithm': b'CRC32', 'X-Amz-Date': b'20260401T094144Z', 'X-Amz-Content-SHA256': b'4c8827fc8bf9da88198ff47734e73d208d57ab3a5b6f58b78568337cf36c6158', 'Authorization': b'AWS4-HMAC-SHA256 Credential=minio/20260401/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-acl;x-amz-checksum-crc32;x-amz-content-sha256;x-amz-date;x-amz-sdk-checksum-algorithm, Signature=68678dd14f8ccd1d99f1e61cd3c46d4736f9e19afeea2496f974be15222c3ca3', 'amz-sdk-invocation-id': b'd72791a6-ba8e-4189-8dce-dc44963e9b4d', 'amz-sdk-request': b'attempt=1', 'Content-Length': '615'}>
+2026-04-01 09:41:44 botocore.awsrequest DEBUG    Waiting for 100 Continue response.
+2026-04-01 09:41:44 botocore.awsrequest DEBUG    100 Continue response seen, now sending request body.
+2026-04-01 09:41:44 urllib3.connectionpool DEBUG    http://minio:9000 "PUT /ccx-bucket/insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json HTTP/1.1" 200 0
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function _handle_200_error at 0x7f0af666da80>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event before-parse.s3.PutObject: calling handler <function handle_expires_header at 0x7f0af666d8a0>
+2026-04-01 09:41:44 botocore.parsers DEBUG    Response headers: {'Accept-Ranges': 'bytes', 'Content-Length': '0', 'ETag': '"7a07bf684428a810f47cd367b7022fb6"', 'Server': 'MinIO', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Amz-Checksum-Crc32': 'zdJrrg==', 'X-Amz-Checksum-Type': 'FULL_OBJECT', 'X-Amz-Id-2': 'dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8', 'X-Amz-Request-Id': '18A2324BBDD834EA', 'X-Content-Type-Options': 'nosniff', 'X-Ratelimit-Limit': '5510', 'X-Ratelimit-Remaining': '5510', 'X-Xss-Protection': '1; mode=block', 'Date': 'Wed, 01 Apr 2026 09:41:44 GMT'}
+2026-04-01 09:41:44 botocore.parsers DEBUG    Response body:
+b''
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <function _update_status_code at 0x7f0af666dc60>
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x7f0af3df6b10>
+2026-04-01 09:41:44 botocore.retryhandler DEBUG    No retry needed.
+2026-04-01 09:41:44 botocore.hooks DEBUG    Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirectorv2.redirect_from_error of <botocore.utils.S3RegionRedirectorv2 object at 0x7f0af3d9dbd0>>
+2026-04-01 09:41:44 ccx_messaging.utils.s3_uploader DEBUG    Uploaded 'insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json' as '/tmp/tmpv0iy3dtp' to 'ccx-bucket'
+2026-04-01 09:41:44 ccx_messaging.engines.s3_upload_engine DEBUG    Uploaded archive '/tmp/tmpv0iy3dtp' as ccx-bucket/insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json
+2026-04-01 09:41:44 ccx_messaging.engines.s3_upload_engine DEBUG    msg_metadata {'cluster_id': '65024f3d-d013-46cb-9a38-d5b0deeda783', 'external_organization': None}
+2026-04-01 09:41:44 ccx_messaging.engines.s3_upload_engine DEBUG    Generated report: {'path': 'insights/65/65024f3d-d013-46cb-9a38-d5b0deeda783/202604/01/094143/insights.json', 'original_path': '', 'metadata': {'cluster_id': '65024f3d-d013-46cb-9a38-d5b0deeda783', 'external_organization': None}}
+2026-04-01 09:41:44 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_process' callback
+2026-04-01 09:41:44 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000007 processing
+2026-04-01 09:41:44 ccx_messaging.watchers.stats_watcher DEBUG    Receiving 'on_consumer_success' callback
+2026-04-01 09:41:44 ccx_messaging.watchers.payload_tracker_watcher DEBUG    Payload Tracker update successfully sent for cluster : 5d9e6d82b309/l06gQsgAQJ-000007 success
