@@ -1,0 +1,49 @@
+Install colorama if console colors are preferred.
+2026-05-18 13:17:32 ccx_messaging.command_line INFO     Python interpreter version: 3.11.13
+2026-05-18 13:17:32 ccx_messaging.command_line INFO     /ccx-messaging-venv/bin/ccx-messaging version: 4.3.6.dev214+gcbbb10cd4.d20260518
+2026-05-18 13:17:32 insights.core.dr DEBUG    Importing ccx_messaging
+2026-05-18 13:17:32 insights.core.dr DEBUG    Importing ccx_messaging.command_line
+2026-05-18 13:17:32 insights.core.dr DEBUG    Importing ccx_messaging.consumers
+2026-05-18 13:17:32 insights.core.dr DEBUG    Importing ccx_messaging.consumers.idp_kafka_consumer
+2026-05-18 13:17:32 insights.core.dr DEBUG    Importing ccx_messaging.consumers.kafka_consumer
+2026-05-18 13:17:32 insights.core.dr DEBUG    Importing ccx_messaging.consumers.rules_results_consumer
+2026-05-18 13:17:32 insights.core.dr DEBUG    Importing ccx_messaging.consumers.synced_archive_consumer
+2026-05-18 13:17:32 insights.core.dr DEBUG    Importing ccx_messaging.downloaders
+2026-05-18 13:17:32 insights.core.dr DEBUG    Importing ccx_messaging.downloaders.http_downloader
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.downloaders.s3_downloader
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.engines
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.engines.ocp_engine
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.engines.s3_upload_engine
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.engines.sha_extractor_engine
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.error
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.ingress
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.internal_pipeline
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.monitored_broker
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.publishers
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.publishers.dvo_metrics_publisher
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.publishers.idp_rule_processing_publisher
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.publishers.kafka_publisher
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.publishers.rule_processing_publisher
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.publishers.synced_archive_publisher
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.publishers.workloads_info_publisher
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.schemas
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.utils
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.utils.clowder
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.utils.kafka_config
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.utils.logging
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.utils.s3_uploader
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.utils.sentry
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.utils.sliced_template
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.watchers
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.watchers.cluster_id_watcher
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.watchers.consumer_watcher
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.watchers.payload_tracker_watcher
+2026-05-18 13:17:33 insights.core.dr DEBUG    Importing ccx_messaging.watchers.stats_watcher
+2026-05-18 13:17:33 ccx_messaging.downloaders.http_downloader WARNING  No max_archive_size defined. Be careful
+2026-05-18 13:17:33 ccx_messaging.publishers.kafka_publisher DEBUG    Confluent Kafka consumer configuration arguments: Server: kafka. Topic: ccx.archive.synced. Security protocol: None.
+2026-05-18 13:17:33 ccx_messaging.publishers.kafka_publisher INFO     Producing to topic 'ccx.archive.synced' on brokers kafka
+2026-05-18 13:17:33 ccx_messaging.consumers.kafka_consumer INFO     Consuming topic 'platform.upload.announce' from brokers kafka as group 'multiplexor_app'
+2026-05-18 13:17:33 ccx_messaging.consumers.kafka_consumer DEBUG    Confluent Kafka consumer extra configuration arguments: {'group.id': 'multiplexor_app', 'bootstrap.servers': 'kafka', 'max.poll.interval.ms': 600000, 'heartbeat.interval.ms': 10000, 'session.timeout.ms': 20000}
+2026-05-18 13:17:33 ccx_messaging.watchers.stats_watcher INFO     StatWatcher created and listening on port 8000
+2026-05-18 13:17:33 ccx_messaging.watchers.payload_tracker_watcher INFO     Confluent Kafka consumer configuration arguments: Server: kafka. Topic: platform.payload-status. Security protocol: None.
+2026-05-18 13:17:33 ccx_messaging.watchers.payload_tracker_watcher INFO     Sending status reports to Payload Tracker on topic platform.payload-status as service archive-sync

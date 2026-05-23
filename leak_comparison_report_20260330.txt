@@ -1,0 +1,217 @@
+================================================================================
+MEMORY LEAK FIX COMPARISON REPORT
+================================================================================
+
+OLD RUN (unfixed): 2026-03-26 @ local_monitoring_20260326_073712
+NEW RUN (fixed):   2026-03-30 @ local_monitoring_20260330_171224
+
+
+================================================================================
+CONTAINER: ARCHIVE-SYNC
+================================================================================
+
+[1] DOCKER/PODMAN STATS (Container Memory Usage)
+--------------------------------------------------------------------------------
+
+OLD (docker stats):
+  Duration:        9.23 hours (2797 samples)
+  Start Memory:    84.58 MB
+  End Memory:      96.58 MB
+  Delta:           +12.00 MB
+  Rate (simple):   +1.300 MB/hr
+  Rate (linreg):   +0.784 MB/hr (R²=0.9050)
+
+NEW (podman stats):
+  Duration:        12.00 hours (3571 samples)
+  Start Memory:    108.50 MB
+  End Memory:      92.89 MB
+  Delta:           -15.61 MB
+  Rate (simple):   -1.301 MB/hr
+  Rate (linreg):   -0.530 MB/hr (R²=0.0650)
+
+COMPARISON:
+  Rate reduction:  +1.313 MB/hr (+167.6%)
+  ✓ NEW run shows NEGATIVE growth (memory decreasing)
+
+[2] PROCESS MEMORY (/proc/1/status VmRSS)
+--------------------------------------------------------------------------------
+
+OLD: No valid data (process_memory CSV incomplete)
+
+[3] PROMETHEUS METRICS
+--------------------------------------------------------------------------------
+
+OLD:
+  Duration:        0.35 hours (57 samples)
+  Start RSS:       87.73 MB
+  End RSS:         92.99 MB
+  Delta:           +5.27 MB
+  Rate:            +15.045 MB/hr
+  GC Uncollectable: 0 → 0
+  Throughput:      2476 received, 2474 processed
+
+NEW:
+  Duration:        12.00 hours (3571 samples)
+  Start RSS:       85.49 MB
+  End RSS:         70.68 MB
+  Delta:           -14.82 MB
+  Rate (simple):   -1.235 MB/hr
+  Rate (linreg):   -1.718 MB/hr (R²=0.8884)
+  GC Uncollectable: 0 → 0
+  Throughput:      243838 received, 243836 processed
+
+  BROKER DICT METRICS (NEW run only):
+    Instances:     0 → 11 (max: 11)
+    Exceptions:    0 → 0 (max: 0)
+    Tracebacks:    0 → 0 (max: 0)
+    ✓ Broker dicts EMPTY (leak fixed!)
+
+COMPARISON:
+  Rate reduction:  +16.279 MB/hr
+
+================================================================================
+CONTAINER: RULES-PROCESSING
+================================================================================
+
+[1] DOCKER/PODMAN STATS (Container Memory Usage)
+--------------------------------------------------------------------------------
+
+OLD (docker stats):
+  Duration:        9.23 hours (2796 samples)
+  Start Memory:    91.12 MB
+  End Memory:      103.00 MB
+  Delta:           +11.88 MB
+  Rate (simple):   +1.287 MB/hr
+  Rate (linreg):   +0.734 MB/hr (R²=0.9340)
+
+NEW (podman stats):
+  Duration:        12.00 hours (3571 samples)
+  Start Memory:    92.34 MB
+  End Memory:      131.70 MB
+  Delta:           +39.36 MB
+  Rate (simple):   +3.280 MB/hr
+  Rate (linreg):   +4.869 MB/hr (R²=0.3643)
+
+COMPARISON:
+  Rate reduction:  -4.135 MB/hr (-563.4%)
+  ✗ NEW run shows FASTER growth
+
+[2] PROCESS MEMORY (/proc/1/status VmRSS)
+--------------------------------------------------------------------------------
+
+OLD: No valid data (process_memory CSV incomplete)
+
+[3] PROMETHEUS METRICS
+--------------------------------------------------------------------------------
+
+OLD:
+  Duration:        0.35 hours (59 samples)
+  Start RSS:       101.38 MB
+  End RSS:         105.88 MB
+  Delta:           +4.50 MB
+  Rate:            +12.857 MB/hr
+  GC Uncollectable: 0 → 0
+  Throughput:      118 received, 119 processed
+
+NEW:
+  Duration:        12.00 hours (3571 samples)
+  Start RSS:       72.67 MB
+  End RSS:         88.68 MB
+  Delta:           +16.01 MB
+  Rate (simple):   +1.334 MB/hr
+  Rate (linreg):   -1.104 MB/hr (R²=0.5289)
+  GC Uncollectable: 0 → 0
+  Throughput:      243836 received, 243836 processed
+
+  BROKER DICT METRICS (NEW run only):
+    Instances:     0 → 1 (max: 1)
+    Exceptions:    0 → 0 (max: 0)
+    Tracebacks:    0 → 0 (max: 0)
+    ✓ Broker dicts EMPTY (leak fixed!)
+
+COMPARISON:
+  Rate reduction:  +11.523 MB/hr
+
+================================================================================
+CONTAINER: RULES-UPLOADER
+================================================================================
+
+[1] DOCKER/PODMAN STATS (Container Memory Usage)
+--------------------------------------------------------------------------------
+
+OLD (docker stats):
+  Duration:        9.23 hours (2797 samples)
+  Start Memory:    110.20 MB
+  End Memory:      117.20 MB
+  Delta:           +7.00 MB
+  Rate (simple):   +0.758 MB/hr
+  Rate (linreg):   +0.357 MB/hr (R²=0.8842)
+
+NEW (podman stats):
+  Duration:        12.00 hours (3571 samples)
+  Start Memory:    111.40 MB
+  End Memory:      91.16 MB
+  Delta:           -20.24 MB
+  Rate (simple):   -1.687 MB/hr
+  Rate (linreg):   -0.651 MB/hr (R²=0.0915)
+
+COMPARISON:
+  Rate reduction:  +1.008 MB/hr (+282.3%)
+  ✓ NEW run shows NEGATIVE growth (memory decreasing)
+
+[2] PROCESS MEMORY (/proc/1/status VmRSS)
+--------------------------------------------------------------------------------
+
+OLD: No valid data (process_memory CSV incomplete)
+
+[3] PROMETHEUS METRICS
+--------------------------------------------------------------------------------
+
+OLD:
+  Duration:        0.35 hours (57 samples)
+  Start RSS:       87.24 MB
+  End RSS:         87.86 MB
+  Delta:           +0.62 MB
+  Rate:            +1.786 MB/hr
+  GC Uncollectable: 0 → 0
+  Throughput:      126 received, 126 processed
+
+NEW:
+  Duration:        12.00 hours (3571 samples)
+  Start RSS:       85.32 MB
+  End RSS:         70.33 MB
+  Delta:           -14.98 MB
+  Rate (simple):   -1.249 MB/hr
+  Rate (linreg):   -1.721 MB/hr (R²=0.8984)
+  GC Uncollectable: 0 → 0
+  Throughput:      243836 received, 243831 processed
+
+  BROKER DICT METRICS (NEW run only):
+    Instances:     0 → 2 (max: 2)
+    Exceptions:    0 → 0 (max: 0)
+    Tracebacks:    0 → 0 (max: 0)
+    ✓ Broker dicts EMPTY (leak fixed!)
+
+COMPARISON:
+  Rate reduction:  +3.034 MB/hr
+
+================================================================================
+SUMMARY
+================================================================================
+
+Key Findings:
+
+archive-sync:
+  Container Memory: +0.784 MB/hr → -0.530 MB/hr (Δ=+1.313 MB/hr)
+    ✓ FIXED: Memory stable or decreasing
+  Broker Dicts: ✓ EMPTY (circular ref leak fixed)
+
+rules-processing:
+  Container Memory: +0.734 MB/hr → +4.869 MB/hr (Δ=-4.135 MB/hr)
+    ✗ REGRESSION: Memory growing faster
+  Broker Dicts: ✓ EMPTY (circular ref leak fixed)
+
+rules-uploader:
+  Container Memory: +0.357 MB/hr → -0.651 MB/hr (Δ=+1.008 MB/hr)
+    ✓ FIXED: Memory stable or decreasing
+  Broker Dicts: ✓ EMPTY (circular ref leak fixed)

@@ -1,0 +1,77 @@
+Install colorama if console colors are preferred.
+2026-04-01 12:45:16 ccx_messaging.command_line INFO     Python interpreter version: 3.11.13
+2026-04-01 12:45:16 ccx_messaging.command_line INFO     /ccx-messaging-venv/bin/ccx-messaging version: 4.3.6.dev92+g26a0009a3.d20260331
+2026-04-01 12:45:16 insights.core.dr DEBUG    Importing ccx_messaging
+2026-04-01 12:45:16 insights.core.dr DEBUG    Importing ccx_messaging.command_line
+2026-04-01 12:45:16 insights.core.dr DEBUG    Importing ccx_messaging.consumers
+2026-04-01 12:45:16 insights.core.dr DEBUG    Importing ccx_messaging.consumers.idp_kafka_consumer
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.consumers.kafka_consumer
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.consumers.rules_results_consumer
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.consumers.synced_archive_consumer
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.downloaders
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.downloaders.http_downloader
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.downloaders.s3_downloader
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.engines
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.engines.ocp_engine
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.engines.s3_upload_engine
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.engines.sha_extractor_engine
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.error
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.ingress
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.internal_pipeline
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.monitored_broker
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.publishers
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.publishers.dvo_metrics_publisher
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.publishers.idp_rule_processing_publisher
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.publishers.kafka_publisher
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.publishers.rule_processing_publisher
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.publishers.synced_archive_publisher
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.publishers.workloads_info_publisher
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.schemas
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.utils
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.utils.clowder
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.utils.kafka_config
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.utils.logging
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.utils.s3_uploader
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.utils.sentry
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.utils.sliced_template
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.watchers
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.watchers.cluster_id_watcher
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.watchers.consumer_watcher
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.watchers.payload_tracker_watcher
+2026-04-01 12:45:17 insights.core.dr DEBUG    Importing ccx_messaging.watchers.stats_watcher
+2026-04-01 12:45:17 botocore.hooks DEBUG    Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2026-04-01 12:45:17 botocore.hooks DEBUG    Changing event name from before-call.apigateway to before-call.api-gateway
+2026-04-01 12:45:17 botocore.hooks DEBUG    Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2026-04-01 12:45:17 botocore.hooks DEBUG    Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2026-04-01 12:45:17 botocore.hooks DEBUG    Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2026-04-01 12:45:17 botocore.hooks DEBUG    Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2026-04-01 12:45:17 botocore.hooks DEBUG    Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2026-04-01 12:45:17 botocore.hooks DEBUG    Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2026-04-01 12:45:17 botocore.hooks DEBUG    Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+2026-04-01 12:45:17 botocore.hooks DEBUG    Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2026-04-01 12:45:17 botocore.hooks DEBUG    Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2026-04-01 12:45:17 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/endpoints.json
+2026-04-01 12:45:17 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/sdk-default-configuration.json
+2026-04-01 12:45:17 botocore.hooks DEBUG    Event choose-service-name: calling handler <function handle_service_name_alias at 0x7f1875c3cfe0>
+2026-04-01 12:45:17 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/s3/2006-03-01/service-2.json.gz
+2026-04-01 12:45:17 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/s3/2006-03-01/service-2.sdk-extras.json
+2026-04-01 12:45:17 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/s3/2006-03-01/endpoint-rule-set-1.json.gz
+2026-04-01 12:45:17 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/partitions.json
+2026-04-01 12:45:17 botocore.hooks DEBUG    Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x7f1875da60c0>
+2026-04-01 12:45:17 botocore.hooks DEBUG    Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x7f1876ff2840>
+2026-04-01 12:45:17 botocore.hooks DEBUG    Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x7f1875da5e40>
+2026-04-01 12:45:17 botocore.endpoint DEBUG    Setting s3 timeout as (60, 60)
+2026-04-01 12:45:17 botocore.loaders DEBUG    Loading JSON file: /ccx-messaging-venv/lib64/python3.11/site-packages/botocore/data/_retry.json
+2026-04-01 12:45:17 botocore.client DEBUG    Registering retry handlers for service: s3
+2026-04-01 12:45:17 botocore.utils DEBUG    Registering S3 region redirector handler
+2026-04-01 12:45:17 botocore.utils DEBUG    Registering S3Express Identity Resolver
+2026-04-01 12:45:17 ccx_messaging.consumers.kafka_consumer INFO     Consuming topic 'ccx.insights.rules.results' from brokers kafka:9092 as group 'rules_uploader_app'
+2026-04-01 12:45:17 ccx_messaging.consumers.kafka_consumer DEBUG    Confluent Kafka consumer extra configuration arguments: {'group.id': 'rules_uploader_app', 'bootstrap.servers': 'kafka:9092', 'max.poll.interval.ms': 600000, 'heartbeat.interval.ms': 10000, 'session.timeout.ms': 20000}
+2026-04-01 12:45:17 root INFO     No OCP rules package is installed.
+2026-04-01 12:45:17 ccx_messaging.watchers.stats_watcher INFO     StatWatcher created and listening on port 8000
+2026-04-01 12:45:17 ccx_messaging.watchers.payload_tracker_watcher INFO     Confluent Kafka consumer configuration arguments: Server: kafka:9092. Topic: platform.payload-status. Security protocol: None.
+%3|1775047517.520|FAIL|rdkafka#consumer-1| [thrd:kafka:9092/bootstrap]: kafka:9092/bootstrap: Connect to ipv4#10.89.0.3:9092 failed: Connection refused (after 2ms in state CONNECT)
+2026-04-01 12:45:17 ccx_messaging.watchers.payload_tracker_watcher INFO     Sending status reports to Payload Tracker on topic platform.payload-status as service rules-uploader
+%3|1775047517.521|FAIL|rdkafka#producer-2| [thrd:kafka:9092/bootstrap]: kafka:9092/bootstrap: Connect to ipv4#10.89.0.3:9092 failed: Connection refused (after 0ms in state CONNECT)
+%3|1775047517.569|FAIL|rdkafka#consumer-1| [thrd:kafka:9092/bootstrap]: kafka:9092/bootstrap: Connect to ipv4#10.89.0.3:9092 failed: Connection refused (after 0ms in state CONNECT, 1 identical error(s) suppressed)
+%3|1775047518.521|FAIL|rdkafka#producer-2| [thrd:kafka:9092/bootstrap]: kafka:9092/bootstrap: Connect to ipv4#10.89.0.3:9092 failed: Connection refused (after 0ms in state CONNECT, 1 identical error(s) suppressed)
